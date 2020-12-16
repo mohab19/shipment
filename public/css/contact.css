@@ -1,0 +1,20 @@
+.navbar{    background-color:#343A40;}
+
+
+.contact{padding:60px 0px}
+
+
+
+.contact-form{padding:30px;
+              background-color: #b24354;
+              border-radius: 30px;
+              margin: 20px 0px;}  
+              
+.form-group input{width:48% !important}
+
+.form-group{justify-content: space-between;}
+
+textarea{border-color: transparent;
+         border-radius: 5px;  }
+
+.navbar-brand span{color:#b24354}         

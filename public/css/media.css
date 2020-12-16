@@ -1,82 +1,80 @@
 @media(max-width:767px) /* xs small*/
 {
 
-.logo .fas{display: inline-block;
-color:#fff;
-cursor: pointer;}
+    .features .row{justify-content: center !important;}
 
+      .call-us{margin-bottom: 80px;}
 
-header{    padding: 15px 0px;}
+      #carouselExampleIndicators{display: none;}
 
+      .carousel-small{display: block;
+       margin-bottom: 40px;}
 
-.navbar{display: none !important;}
+      .carousel-indicators{display: none;}
 
+      .footer-bottom{position: static;}
 
-nav.small{display: block !important;}
+      li.nav-item{text-align: left;
+                 margin-top: 20px;}
 
+     .navbar{background-color: #b24354 !important;}
+     
+     nav .collapse{width:100%}
 
-.carousel-indicators{display: none;}
+     h3.header span{color:#343A40 !important}
 
-.footer-top{display: none;}
+     .navbar-toggler {color: #fff !important}
 
-.text-forecast {display: none;}
+     nav a:hover{color:#fff !important}
 
-nav ul{width:100%;}
+     nav ul li:hover {
+        border-bottom: 2px solid #343A40 !important;
+    }
+    .pricing .col-lg-4{width:70% !important;
+        margin: auto;}
 
+.price{margin-top: 20px;} 
 
-
-.text-white {
-    font-size: 10px;
-}
-
-.wrapper{  height: 90vh;}
-
-header .container{max-width:100%}
-
-.login b{display: none;}
-
-.lang-select span:nth-child(2){display: none;}
-.satellite ul{width: 100%;}
-
-.sat-map .my-2{display: none;}
 }
 @media(min-width:768px) and (max-width:991px) /*small*/
 {
+    
+    .feat-last{margin: auto;}
+    .call-us{margin-bottom: 80px;}
+    #carouselExampleIndicators{display: none;}
+    .carousel-small{display: block;
+                    margin-bottom: 40px;}
+    .carousel-indicators{display: none;}
+    .footer-bottom{position: static;}
+    li.nav-item{text-align: left;
+        margin-top: 20px;}
+    .navbar{background-color: #b24354 !important;}  
 
-.satellite ul{width: 70%;}
-.logo .fas{display: inline-block;
-color:#fff;
-cursor: pointer;}
+    nav .collapse{width: 100%;}
 
-header{    padding: 15px 0px;}
+    h3.header span{color:#343A40 !important}
 
-.wrapper{  height: 90vh;}
+    .navbar-toggler {color: #fff !important}
 
-.navbar{display: none !important;}
+    nav a:hover{color:#fff !important}
 
-nav.small{display: block !important;}
+    nav ul li:hover {
+        border-bottom: 2px solid #343A40 !important;
+    }
 
-.carousel-indicators{display: none;}
+    .pricing .col-lg-4{width:60% !important;
+                       margin: auto;}
 
-.footer-top{display: none;}
+    .price{margin-top: 20px;}                   
 
-.text-forecast {display: none;}
-
-nav ul{width:100%;}
-
-
-header .container{max-width:100%}
 }
-
-
 @media(min-width:1001px) and (max-width:1199px) {/*medium*/
-    nav ul{width:100%;}
+ 
    
 }
-
 @media(min-width:1200px) /*large*/
 {
-
+   
 }
 
 

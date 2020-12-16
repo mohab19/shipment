@@ -1,119 +1,35 @@
-<!--top button-->
-<button id="btnUp" class="btn btn-sm btn-dark rounded-circle p-1">
+<!--top button
+<button id="btnUp" class="btn btn-lg btn-dark rounded-circle p-3   ">
     <i class="fas fa-arrow-up"></i>
 </button>
-<!--top button-->
+top button-->
 
-<!--header-->
-<header>
+<!--start header-->
+<nav class="navbar navbar-expand-lg fixed-top ">
     <div class="container">
-        <div class="logo">
-            <div class="logo-img d-flex align-items-center">
-                <div class="logoMyImage d-flex align-items-center">
-                <img src="{{asset('images/settings/'.$settings->where('name', 'logo')->first()->image)}}" alt="logo">
-                <p class="">{{$settings->where('name', 'website_name')->first()->value}}</p>
-                </div>
-                <div class="lang-dropdown">
-                    <div class="lang-select">
-                        <span><i class="fas fa-globe-asia"></i></span>&nbsp;
-                        @if(app()->getLocale() == 'ar')
-                        <span>عربي</span>&nbsp;
-                        @else
-                        <span>English</span>&nbsp;
-                        @endif
-                        <span><i class="fas fa-caret-down"></i></span>
-                    </div>
-                    <div class="lang-list">
-                        <ul class="list-unstyled">
-                            <li><a href="{{url('/ar')}}" class="d-flex" style="justify-content: space-between;"><span>عربي</span>@if(app()->getLocale() == 'ar') <span><i class="fas fa-check"></i></span> @endif</a></li>
-                            <li><a href="{{url('/en')}}" class="d-flex" style="justify-content: space-between;"><span>English</span>@if(app()->getLocale() == 'en') <span><i class="fas fa-check"></i></span> @endif</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <span class="login d-flex align-items-center">
-                @if(auth()->user())
-                <span>{{auth()->user()->name}}</span>
-                @else
-                <a href="{{route('login', app()->getLocale())}}"><i class="fas fa-user"></i><b class="@if(app()->getLocale() == 'ar') mr-2 @else ml-2 @endif"> @lang('home.login') </b></a>
-                @endif
-            </span>
-            <i class="fas fa-bars navbar-toggler" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation"></i>
-        </div>
-    </div>
-</header>
-<!--header-->
-
-<!--nav-->
-<nav class="navbar navbar-expand-lg  navbar-light bg-light">
-    <div class="container">
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-            <ul class="navbar-nav mt-2 mt-lg-0" style="width: 100%;">
-                <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center" href="{{url('/').'/'}}@lang('home.lng')"><i class="fas fa-home @if(app()->getLocale() == 'ar') ml-2 @else mr-2 @endif"></i> @lang('home.home') </a>
+        <a class="navbar-brand" href="#" class="d-flex align-items-center"><img src="{{asset('images/settings/'.$settings->where('name', 'logo')->first()->image)}}" alt="logo-shiping" class="img-fluid"><span>{{$settings->where('name', 'website_name')->first()->value}}</span></a>
+        <p class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </p>
+        <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button> -->
+        <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+            <ul class="navbar-nav row justify-content-center">
+                <li class="nav-item active col">
+                    <a class="nav-link" href="{{url('/'.app()->getLocale())}}">Home</a>
                 </li>
-                <li class="nav-item dropdown dmenu">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                        @lang('home.satellite')
-                    </a>
-                    <div class="dropdown-menu sm-menu">
-                        @foreach($satellites as $key => $satellite)
-                        <a class="dropdown-item @if(app()->getLocale() == 'ar') mr-2 @else ml-2 @endif" href="{{url(app()->getLocale().'/satellite/'.$satellite->id)}}"> {{$satellite->name}}</a>
-                        @endforeach
-                    </div>
+                <li class="nav-item col">
+                    <a class="nav-link" href="{{url(app()->getLocale().'/pricing')}}">Pricing</a>
                 </li>
-                <li class="nav-item dropdown dmenu">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                        @lang('home.radar')
-                    </a>
-                    <div class="dropdown-menu sm-menu">
-                        @foreach($radars as $key => $radar)
-                        <a class="dropdown-item @if(app()->getLocale() == 'ar') mr-2 @else ml-2 @endif" href="{{url(app()->getLocale().'/radar/'.$radar->id)}}">{{$radar->name}}</a>
-                        @endforeach
-                    </div>
+                <li class="nav-item col">
+                    <a class="nav-link" href="{{url(app()->getLocale().'/contact_us')}}">Contact us</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="sat.html">@lang('home.your_news')</a>
+                <li class="nav-item col">
+                    <a class="nav-link" href="{{url(app()->getLocale().'/login')}}">Login</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
-<!--nav-->
-
-<!--nav small-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light small">
-    <div class="container">
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-            <ul class="navbar-nav mt-2 mt-lg-0" style="width: 100%;">
-                <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center" href="{{url('/').'/'}}@lang('home.lng')"><i class="fas fa-home @if(app()->getLocale() == 'ar') ml-2 @else mr-2 @endif"></i> @lang('home.home') </a>
-                </li>
-                <li class="nav-item dropdown dmenu">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                        @lang('home.satellite')
-                    </a>
-                    <div class="dropdown-menu sm-menu">
-                        @foreach($satellites as $key => $satellite)
-                        <a class="dropdown-item @if(app()->getLocale() == 'ar') mr-2 @else ml-2 @endif" href="{{url(app()->getLocale().'/satellite/'.$satellite->id)}}"> {{$satellite->name}}</a>
-                        @endforeach
-                    </div>
-                </li>
-                <li class="nav-item dropdown dmenu">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                        @lang('home.radar')
-                    </a>
-                    <div class="dropdown-menu sm-menu">
-                        @foreach($radars as $key => $radar)
-                        <a class="dropdown-item @if(app()->getLocale() == 'ar') mr-2 @else ml-2 @endif" href="{{url(app()->getLocale().'/radar/'.$radar->id)}}">{{$radar->name}}</a>
-                        @endforeach
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="sat.html">@lang('home.your_news')</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-<!--nav small-->
+<!--end header-->

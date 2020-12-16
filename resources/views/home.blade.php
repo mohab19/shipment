@@ -1,221 +1,314 @@
 @extends('layouts.app')
 @push('styles')
-    <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
-    <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}">
-    <style media="screen">
-        .search-result {
-            padding: 5px 10px;
-            font-weight: bold;
-        }
-        .search-result:hover {
-            background: blue;
-            color: white;
-        }
-    </style>
+<link rel="stylesheet" href="{{ asset('css/index_style.css') }}">
 @endpush
 @section('content')
-<!--weather table
-<div class="weather-table">
-    <div class="container">
-        <div class="search-box d-flex align-items-center">
-            <img class="search-box-flag img-circle" src="https://assets.devops.arabiaweather.com/images/flags/svg/1x1/sa.svg" width="26" height="26">
-            <input type="text" class="form-control text-center" id="search" placeholder="@lang('home.search')" autocomplete="off">
-            <i class="fas fa-search" id="add-location" style="cursor: pointer;"></i>
-        </div>
-        <div class="p-3" style="width: 100%;background: #fff;z-index: 9;position: relative;top: -19px;border: 1px solid #b9b7b7;display: none;" id="search-result">
-            <ul style="list-style: none;">
+<!-- start paner -->
+<section class="main-panel">
+	<div class="layer">
 
-            </ul>
-        </div>
-        forcasting section
-        <div class="row" id="climate">
-            include('climate', ['forcasting' => $forcasting])
-        </div>
-        forcasting section
-    </div>
-</div>
-end main -->
-
-<!--radar section-->
-<section class="radar">
-    <div class="container-fluid">
-        <div class="row text-center">
-            @foreach($RNRadars as $key => $radar)
-            <div class="col-md-3 @if($key < 4 && $key%2 == 0) grey @elseif($key > 4 && $key%2 != 0) grey @endif">
-                <a href="{{url(app()->getLocale() . '/radar/'.$radar->id)}}">
-                    <div class="radar-ex">
-                        @if(isset($radar->image))
-                        <img src="{{asset('images/radars'.'/'.$radar->image)}}" alt="{{$radar->name}}">
-                        @endif
-                        <h4>{{strtoupper($radar->name)}}</h4>
-                    </div>
-                </a>
-            </div>
-            @endforeach
-        </div>
-    </div>
+	</div>
+	<div class="content">
+		<h2>Welcome to Shipping Company</h2>
+		<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+		<span class="btn begin"><i class="fas fa-angle-double-down fa-lg"></i></span>
+	</div>
 </section>
+<!-- end paner -->
 
-<!--stalite map-->
-<div class="satellite">
+<!-- start features -->
+<section class="features">
+	<div class="container text-center">
+		<h2 class="header">WHY CHOOSE SHIPPING <span>INFO</span></h2>
+		<div class="row justify-content-between">
+			<div class="feature col-lg-3   col-sm-8">
+				<span><i class="fas fa-dollar-sign fa-3x"></i></span>
+				<h5>Feature</h5>
+				<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+			</div>
+			<div class="feature col-lg-3  col-sm-8">
+				<span><i class="fas fa-star fa-3x"></i></span>
+				<h5>Feature</h5>
+				<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+			</div>
+			<div class="feature col-lg-3   col-sm-8 feat-last">
+				<span><i class="fas fa-truck-moving fa-3x"></i></span>
+				<h5>Feature</h5>
+				<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- end features -->
+
+<!--start about-->
+<section class="about">
     <div class="container">
-        <div class="row">
-            <div class="col-md-9">
-                 <div class="sat-map">
-                    <h3><i class="fas fa-satellite-dish mx-2"></i>@lang('home.satellite')</h3>
-                    <iframe width="100%" height="350" src="https://embed.windy.com/embed2.html?lat=24.7136&lon=46.6753&detailLat=24.7136&detailLon=46.6753&width=650&height=450&zoom=5&level=surface&overlay=wind&product=ecmwf&menu=&message=&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-1" frameborder="0"></iframe>
-                </div>
-                <div class="weather-news">
-                    <h3> <i class="fas fa-cloud-sun mx-2"></i>Weather Map</h3>
-                    <div class="news-box d-flex">
-                        <iframe src="https://www.rainviewer.com/map.html?loc=24.7136,46.6753,5&oFa=0&oC=0&oU=0&oCS=1&oF=0&oAP=0&rmt=4&c=1&o=83&lm=0&th=0&sm=1&sn=1" width="100%" style="height:50vh;" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="news-carousel">
-                    <div class="weather-news">
-                        <h3><i class="fas fa-cloud-sun mx-2"></i> Weather Models </h3>
-                        <div class="news-box d-flex">
-                            <div class="owl-carousel owl-theme">
-                                @foreach($radars as $key => $radar)
-                                <div class="carousel-item active">
-                                    <div class="card">
-                                        @if($radar->image == null)
-                                        <img src="{{asset('images/weather.png')}}" class="card-img-top" alt="{{$radar->name}}">
-                                        @else
-                                        <img src="{{asset('images/radars'.'/'.$radar->image)}}" class="card-img-top" alt="{{$radar->name}}">
-                                        @endif
-                                        <div class="card-body text-center">
-                                            <h6 class="card-title">{{$radar->name}}</h6>
-                                            <a href="{{url(app()->getLocale().'/radar/'.$radar->id)}}" class="d-flex align-items-center justify-content-center"><span>Details</span> <i class="fas fa-angle-double-right ml-2"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="news-carousel news-carousel-small">
-                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                        </ol>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="card">
-                                    <img src="img/pic1.jpg" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <a href="#" class="d-flex align-items-center justify-content-center"><span>Details</span> <i class="fas fa-angle-double-right ml-2"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="card">
-                                    <img src="img/pic1.jpg" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <a href="#" class="d-flex align-items-center justify-content-center"><span>Details</span> <i class="fas fa-angle-double-right ml-2"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="card" >
-                                    <img src="img/pic1.jpg" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <a href="#" class="d-flex align-items-center justify-content-center"><span>Details</span> <i class="fas fa-angle-double-right ml-2"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="adv">
-                    <p class="text-muted">advertisement</p>
-                    <div class="story">
-                        <p class="d-flex">
-                            <span>stories</span>
-                            <svg style="width:26px;position:relative;top:-6px;float:right;margin-left:5px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" xml:space="preserve">
-                                <g>
-                                    <path d="M13,3c-5,0-9,4-9,9H1l3.9,3.9L5,16l4-4H6c0-3.9,3.1-7,7-7s7,3.1,7,7s-3.1,7-7,7c-1.9,0-3.7-0.8-4.9-2.1l-1.4,1.4,C8.3,20,10.5,21,13,21c5,0,9-4,9-9S18,3,13,3z"></path>
-                                    <polygon points="12,8 12,13 16.3,15.5 17,14.3 13.5,12.2 13.5,8"></polygon>
-                                </g>
-                            </svg>
-                        </p>
-                        <ul class="list-unstyled">
-                            <li><a href="#"><img src="img/pic1.jpg" class=" img-rounded" alt="weather pic"> <p>video nd photo after</p></a></li>
-                            <li><a href="#"><img src="img/pic1.jpg" class=" img-rounded" alt="weather pic"> <p>video nd photo after</p></a></li>
-                            <li><a href="#"><img src="img/pic1.jpg" class=" img-rounded" alt="weather pic"> <p>video nd photo after</p></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="map">
-                    <p>weather map</p>
-                    <iframe width="100%" height="250" src="https://embed.windy.com/embed2.html?lat=24.7136&lon=46.6753&detailLat=24.7136&detailLon=46.6753&width=650&height=450&zoom=5&level=surface&overlay=wind&product=ecmwf&menu=&message=&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-1" frameborder="0"></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--stalite map-->
+	    <h2 class="text-center py-5">About us</h2>
+	    <div class="row">
+		    <div class="col-lg-6">
+			    <div class="about-text">
+				    <h2 class="sub-title py-3"><span>OUR </span>HISTORY</h2>
+				    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A architecto delectus enim quo magni, eaque, possimus sit fuga impedit animi quod recusandae ducimus iste quas, corporis libero quos deserunt amet.</p>
+				    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti unde laborum at molestiae error rem animi iure vero quidem veniam esse nisi reprehenderit fugiat architecto magnam earum delectus, doloremque quam.</p>
+			    </div>
+			    <div class="about-icon mt-5">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="item">
+								<i class="fas fa-truck my-3 fa-2x"></i>
+								<h3>Ground Shipping</h3>
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis.</p>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="item">
+							    <i class="fas fa-plane my-3 fa-2x"></i>
+							    <h3>Ground Shipping</h3>
+							    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis.</p>
+						    </div>
+					    </div>
+					</div>
+				</div>
+			</div>
+			<div class="offset-lg-1 col-lg-4  col-md-8 mt-5">
+				<div class="about-img">
+					<img src="images/img_1.jpg"  class="img-fluid"  alt="shipping">
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--end about-->
 
-<!--arabia carousel-->
-<div class="arabia-carousel mb-5">
-    <div class="container">
-        <div class="weather-news">
-            <h3><i class="fas fa-cloud-sun mx-2"></i> Weather With Friends </h3>
-            <div class="news-box d-flex">
-                <div class="owl-carousel owl-theme">
-                    @foreach($news as $key => $new)
-                    <div class="item">
-                        <div class="card">
-                            <img src="{{url('images/news/'.$new->image)}}" class="card-img-top" alt="{{$new['title_'.app()->getLocale()]}}">
-                            <div class="card-body">
-                                <h5 class="card-title">{{$new['title_'.app()->getLocale()]}}</h5>
-                                <a href="{{url(app()->getLocale().'/news/'.$new->id)}}" class="d-flex align-items-center justify-content-center">
-                                    <span>Details</span> <i class="fas fa-angle-double-right ml-2"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <h5 class="card-title"></h5>
-            <div class="card-body">
+<!-- start parteners -->
+<section class="partners">
+	<div class="container">
+		<h2 class="pb-5 text-center">Our Partners</h2>
+		<div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+			<div class="carousel-inner">
+	  			<div class="carousel-item active">
+					<div class="row">
+						<div class="col-lg-3">
+							<div class="logo">
+					 			<img src="images/delivermy.png"  class="w-50" alt="">
+							</div>
+						</div>
+						<div class="col-lg-3">
+			  				<div class="logo">
+								<img src="images/delivermy.png"  class="w-50" alt="">
+			  				</div>
+		  				</div>
+		  				<div class="col-lg-3">
+			  				<div class="logo">
+								<img src="images/delivermy.png"  class="w-50" alt="">
+			  				</div>
+		  				</div>
+		  				<div class="col-lg-3">
+			  				<div class="logo">
+								<img src="images/delivermy.png"  class="w-50" alt="">
+			  				</div>
+		  				</div>
+					</div>
+	  			</div>
+	  			<div class="carousel-item">
+					<div class="row">
+						<div class="col-lg-3">
+							<div class="logo">
+								<img src="images/delivermy.png"  class="w-50" alt="">
+							</div>
+						</div>
+						<div class="col-lg-3">
+			  				<div class="logo">
+								<img src="images/delivermy.png"  class="w-50" alt="">
+			  				</div>
+		  				</div>
+					    <div class="col-lg-3">
+						    <div class="logo">
+								<img src="images/delivermy.png"  class="w-50" alt="">
+					 	    </div>
+					    </div>
+		  				<div class="col-lg-3">
+			  				<div class="logo">
+								<img src="images/delivermy.png"  class="w-50" alt="">
+			  				</div>
+		  				</div>
+					</div>
+	  			</div>
+			</div>
+			<ol class="carousel-indicators position-static mt-3">
+				<li data-target="#carouselExampleIndicators2" data-slide-to="0" class="active"></li>
+				<li data-target="#carouselExampleIndicators2" data-slide-to="1"></li>
+	  		</ol>
+  		</div>
+  	</div>
+</section>
+<!--end parteners-->
 
-            </div>
-        </div>
-    </div>
-</div>
-<!--arabia carousel-->
+<!-- start why panel -->
+<section class="panel">
+	<div class="panel-background">
+
+	</div>
+	<div class="container text-center">
+		<h2>HOW MUCH OUR COMPANY COVERS</h2>
+		<div class="row">
+			<div class="col-md-7">
+
+			</div>
+			<div class="col-md-5">
+				<h4>Our Company covers every Major cities</h4>
+				<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- end why panel -->
+
+<!-- start transport -->
+<section class="transport">
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-lg-5">
+				<div class="left">
+					<h2>TRANSPORTATIONS & LOGISTICS</h2>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus dolorem eius eligendi esse quod?</p>
+				</div>
+			</div>
+			<div class="offset-lg-1 col-lg-6">
+				<div class="right d-flex">
+					<input type="text" class="w-75 p-2">
+					<button class="btn track">Track Now</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- end transport -->
+
+<!-- start work -->
+<section class="work">
+	<div class="overlay">
+		<div class="container text-white">
+			<h2 class="text-center">How it work</h2>
+			<div class="row">
+				<div class="col-lg-4">
+					<div class="step">
+						<span class="number my-3">1</span>
+					 	<h4 class="my-3">Choose Your Service</h4>
+					 	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+							Incidunt praesentium dicta consectetur fuga neque fugit a at. Cum quod vero assumenda iusto.
+						</p>
+					 	<ul class="list-unstyled my-3">
+						 	<li><i class="fas fa-check mx-2"></i>Error minus sint nobis dolor</li>
+						 	<li><i class="fas fa-check mx-2"></i>Voluptatum porro expedita labore esse</li>
+						 	<li><i class="fas fa-check mx-2"></i>Voluptas unde sit pariatur earum</li>
+					 	</ul>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="step">
+						<span class="number my-3">2</span>
+					 	<h4 class="my-3">Select Your Payment</h4>
+					 	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+							Incidunt praesentium dicta consectetur fuga neque fugit a at. Cum quod vero assumenda iusto.
+						</p>
+						<ul class="list-unstyled my-3">
+							<li><i class="fas fa-check mx-2"></i>Error minus sint nobis dolor</li>
+							<li><i class="fas fa-check mx-2"></i>Voluptatum porro expedita labore esse</li>
+							<li><i class="fas fa-check mx-2"></i>Voluptas unde sit pariatur earum</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="step">
+						<span class="number my-3">3</span>
+					 	<h4 class="my-3">Tracking Your Order</h4>
+					 	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+							Incidunt praesentium dicta consectetur fuga neque fugit a at. Cum quod vero assumenda iusto.
+						</p>
+						<ul class="list-unstyled my-3">
+							<li><i class="fas fa-check mx-2"></i>Error minus sint nobis dolor</li>
+							<li><i class="fas fa-check mx-2"></i>Voluptatum porro expedita labore esse</li>
+							<li><i class="fas fa-check mx-2"></i>Voluptas unde sit pariatur earum</li>
+						</ul>
+			 		</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- end work -->
+
+<!-- start feedback -->
+<section class="feedback">
+  	<div class="container">
+	  	<h2 class="text-center py-3">Happy Clients</h2>
+	  	<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+			<div class="carousel-inner">
+		  		<div class="carousel-item active">
+					<div class="row">
+						<div class="col-md-4 ">
+							<div class="feed shadow p-4 text-center">
+								<img src="images/person.jpg" class="w-25 rounded-circle py-3" alt="">
+						 		<p>Incidunt praesentium dicta consectetur fuga neque fugit a at.</p>
+						 		<h4>fathy hasan</h4>
+						 		<p class="text-muted">ui designer</p>
+							</div>
+						</div>
+						<div class="col-md-4">
+					  		<div class="feed shadow p-4 text-center">
+						  		<img src="images/person.jpg" class="w-25 rounded-circle py-3" alt="">
+						   		<p>Incidunt praesentium dicta consectetur fuga neque fugit a at.</p>
+						   		<h4>fathy hasan</h4>
+						   		<p class="text-muted">ui designer</p>
+					  		</div>
+			  			</div>
+			  			<div class="col-md-4">
+				  			<div class="feed shadow p-4 text-center">
+					  			<img src="images/person.jpg" class="w-25 rounded-circle py-3" alt="">
+				   				<p>Incidunt praesentium dicta consectetur fuga neque fugit a at.</p>
+				   				<h4>fathy hasan</h4>
+					   			<p class="text-muted">ui designer</p>
+				  			</div>
+			  			</div>
+					</div>
+	  			</div>
+		  		<div class="carousel-item">
+					<div class="row">
+						<div class="col-md-4">
+							<div class="feed shadow p-4 text-center">
+								<img src="images/person.jpg" class="w-25 rounded-circle py-3" alt="">
+						 		<p>Incidunt praesentium dicta consectetur fuga neque fugit a at.</p>
+					 			<h4>fathy hasan</h4>
+						 		<p class="text-muted">ui designer</p>
+							</div>
+						</div>
+						<div class="col-md-4">
+				  			<div class="feed shadow p-4 text-center">
+						  		<img src="images/person.jpg" class="w-25 rounded-circle py-3" alt="">
+						   		<p>Incidunt praesentium dicta consectetur fuga neque fugit a at.</p>
+						   		<h4>fathy hasan</h4>
+						   		<p class="text-muted">ui designer</p>
+				  			</div>
+			  			</div>
+			  			<div class="col-md-4">
+				  			<div class="feed shadow p-4 text-center ">
+					  			<img src="images/person.jpg" class="w-25 rounded-circle py-3" alt="">
+					   			<p>Incidunt praesentium dicta consectetur fuga neque fugit a at.</p>
+					   			<h4>fathy hasan</h4>
+					   			<p class="text-muted">ui designer</p>
+				  			</div>
+			  			</div>
+					</div>
+		  		</div>
+			</div>
+	  	</div>
+	  	<ol class="carousel-indicators position-static">
+			<li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+			<li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+	  	</ol>
+  	</div>
+</section>
+<!-- end feedback -->
 @endsection
-@push('scripts')
-    <script type="text/javascript" src="{{asset('js/owl.carousel.min.js')}}"></script>
-    <script type="text/javascript">
-        $('.owl-carousel').owlCarousel({
-            rtl:true,
-            loop:true,
-            margin:10,
-            nav:true,
-            responsive:{
-                0:{
-                    items:1
-                },
-                600:{
-                    items:3
-                },
-                1000:{
-                    items:5
-                }
-            }
-        });
-    </script>
-@endpush

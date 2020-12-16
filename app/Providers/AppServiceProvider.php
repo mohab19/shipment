@@ -28,16 +28,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $news       = News::all();
-        $radars     = Radar::all();
-        $RNRadars   = Radar::all()->random(8);
-        $satellites = Satellite::all();
-        $settings   = Settings::all();
-        
-        view()->share('news', $news);
-        view()->share('radars', $radars);
-        view()->share('RNRadars', $RNRadars);
-        view()->share('satellites', $satellites);
+        $settings = Settings::all();
         view()->share('settings', $settings);
     }
 }

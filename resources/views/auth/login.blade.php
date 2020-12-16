@@ -1,54 +1,45 @@
 @extends('layouts.app')
 @push('styles')
-<link rel="stylesheet" href="{{ asset('css/login.css') }}">
+<link rel="stylesheet" href="{{ asset('css/index_style.css') }}">
+<link rel="stylesheet" href="{{ asset('css/login_style.css') }}">
+<link rel="stylesheet" href="{{ asset('css/media.css') }}">
 @endpush
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="wrapper fadeInDown mt-5 mb-5">
-            <div id="formContent">
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" id="signin-tab" data-toggle="tab" href="#signin" role="tab" aria-controls="signin" aria-selected="true"> @lang('main.signin') </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="signup-tab" data-toggle="tab" href="#signup" role="tab" aria-controls="profile" aria-selected="false">@lang('main.signup')</a>
-                    </li>
-                </ul>
-                <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="signin" role="tabpanel" aria-labelledby="signin-tab">
-                        <h2 class="active"> @lang('main.signin') </h2>
-                        <form method="post" action="{{route('login', app()->getLocale())}}">
-                            @csrf
-                            <input type="email" class="fadeIn second" name="email" placeholder="E-mail">
-                            <input type="password" class="fadeIn third" name="password" placeholder="password">
-                            <input type="submit" class="fadeIn fourth" value="@lang('main.signin')">
-                        </form>
-                        <!-- Remind Passowrd -->
-                        <div id="formFooter">
-                            <a class="underlineHover" href="#">Forgot Password?</a>
-                        </div>
-                    </div>
-
-                    <div class="tab-pane fade" id="signup" role="tabpanel" aria-labelledby="signup-tab">
-                        <h2 class="inactive underlineHover"> @lang('main.signup') </h2>
-                        <form method="post" action="{{route('register', app()->getLocale())}}">
-                            @csrf
-                            <input type="text"     id="name" class="fadeIn first" name="name" placeholder="name">
-                            <input type="email"    id="email" class="fadeIn second" name="email" placeholder="email">
-                            <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
-                            <input type="password" id="password_confirmation" class="fadeIn fourth" name="password_confirmation" placeholder="password confirmation">
-                            <script src="https://www.paypal.com/sdk/js?client-id=ASa1ceotXl3lQ51BhEZ5mRBBKYmrUmu2_ATTsYCytZXEkzFd1guWWZD-HOK0mhlSWe66jC1LS_KqkzaH"></script>
-                            <div class="row text-center d-flex justify-content-center mt-3">
-                                <div id="paypal-button-container"></div>
-                            </div>
-                        </form>
-                    </div>
+<!--sart login-->
+<section class="login-table">
+    <div class="container">
+        <div class="row align-items-center ">
+            <div class="col-lg-4" >
+                <div class="best-price text-center">
+                    <i class="fas fa-dollar-sign fa-2x"></i>
+                    <h4 class="mt-5">BEST PRICES</h4>
+                    <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis ipsum odio minima tempora animi iure.</p>
                 </div>
             </div>
+            <div class="col-lg-4">
+                <div class="form ">
+                    <div class="form-group">
+                        <label for="inputName"></label>
+                        <input type="text" placeholder="Enter Name" id="inputName" class="form-control d-block">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail"></label>
+                        <input type="email" placeholder="Enter Email" id="inputEmail" class="form-control d-block">
+                   </div>
+                   <input type="submit" class="btn w-50  button-login" value="LOGIN">
+                   <input type="submit" class="btn w-50  button-login my-4" value="REGISTER">
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="call-us text-center">
+                    <i class="fas fa-phone fa-2x"></i>
+                    <h4 class="mt-5">24/7 SUPPORT</h4>
+                    <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis ipsum  odio minima tempora animi iure.</p>
+                </div>
+           </div>
         </div>
     </div>
-</div>
+</section>
 @endsection
 @push('scripts')
 <script>

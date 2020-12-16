@@ -60,7 +60,7 @@ class SettingsController extends Controller
      * @param  \App\Settings  $settings
      * @return \Illuminate\Http\Response
      */
-    public function show(Settings $settings)
+    public function show(Settings $setting)
     {
         //
     }
@@ -71,10 +71,9 @@ class SettingsController extends Controller
      * @param  \App\Settings  $settings
      * @return \Illuminate\Http\Response
      */
-    public function edit($lang, $id)
+    public function edit($lang, Settings $setting)
     {
-        $settings = Settings::findOrFail($id);
-        return view('settings.edit', compact('settings'));
+        return view('settings.edit', compact('setting'));
     }
 
     /**
@@ -84,10 +83,8 @@ class SettingsController extends Controller
      * @param  \App\Settings  $settings
      * @return \Illuminate\Http\Response
      */
-    public function update($lang, SettingsRequest $request, $id)
+    public function update($lang, SettingsRequest $request, Settings $setting)
     {
-        $setting = Settings::find($id);
-
         if($request->image) {
             $imageName = time().'_'.$request->input('writer').'.'.$request->file('image')->getClientOriginalExtension();
             request()->image->move(public_path('images/settings'), $imageName);
@@ -111,9 +108,9 @@ class SettingsController extends Controller
      * @param  \App\Settings  $settings
      * @return \Illuminate\Http\Response
      */
-    public function destroy($lang, Settings $settings)
+    public function destroy($lang, Settings $setting)
     {
-        $setting->destroy();
+        $setting->delete();
     }
 
     public function getSettings()

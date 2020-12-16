@@ -1,0 +1,50 @@
+.pricing{padding:60px 0px;
+         background-color: #F6F5F5;}
+
+.pricing li{margin-top: 20px;} 
+
+h3.price,.fa-check{color: #b24354}  
+
+
+#shipfrom {
+        width: 28%;
+        padding: 8px;
+        height: 41px;
+        border: 1px solid #B7B7B7;
+        border-radius: 5px;
+        color: #B7B7B7;
+        font-size: 15px;
+        font-family: 'Roboto',Helvetica,Arial,Lucida,sans-serif;
+        font-weight: normal;
+        
+    }
+
+
+nav{background-color: #b24354;}
+ 
+.quote{padding:60px 0px;
+        background-color: #EEE}  
+
+nav a{transition: all .5s ease-in-out;}
+
+nav a:hover,.navbar-brand span{color:#343A40 }
+
+.btn-primary{background-color: #b24354;
+             border-color: #b24354;}
+.btn-primary:hover{background-color: #343A40;
+                   border-color: #343A40;}
+
+.startbosto {
+background: #b24354;
+color: #fff;
+padding: 11px 28px;
+font-size: 18px;
+border-radius: 25px;
+-webkit-border-radius: 25px;
+-moz-border-radius: 25px;
+line-height: 24px;
+font-weight: 700;
+margin: auto;
+text-decoration: none;}  
+
+.startbosto:hover{color:#fff}

@@ -38,6 +38,7 @@
         @yield('StyleSheets')
 
         @yield('title')
+        <script src="https://kit.fontawesome.com/4af7d13715.js" crossorigin="anonymous"></script>
     </head>
 
     <body>

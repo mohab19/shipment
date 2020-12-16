@@ -54,26 +54,26 @@
                                 @csrf
                                 @method('PUT')
                                 <input type="hidden" id="form_name" value="Settings" data-id="settings">
-                                <input type="hidden" name="url" id="route" value="{{route('settings.update', [ app()->getLocale(), $settings->id])}}">
+                                <input type="hidden" name="url" id="route" value="{{route('settings.update', [ app()->getLocale(), $setting->id])}}">
                                 <div class="form-group">
                                     <label for="title_ar" class="col-form-label">@lang('settings.title_ar')</label>
-                                    <input type="text" name="title_ar" class="form-control" value="{{$settings->title_ar}}" required>
+                                    <input type="text" name="title_ar" class="form-control" value="{{$setting->title_ar}}" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="title_en" class="col-form-label">@lang('settings.title_en')</label>
-                                    <input type="text" name="title_en" class="form-control" value="{{$settings->title_en}}" required>
+                                    <input type="text" name="title_en" class="form-control" value="{{$setting->title_en}}" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="type" class="col-form-label">@lang('settings.type')</label>
-                                    <input type="text" name="type" class="form-control" value="{{$settings->type}}" required>
+                                    <input type="text" name="type" class="form-control" value="{{$setting->type}}" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="name" class="col-form-label">@lang('settings.name')</label>
-                                    <input type="text" name="name" class="form-control" value="{{$settings->name}}" required disabled>
+                                    <input type="text" name="name" class="form-control" value="{{$setting->name}}" required readonly>
                                 </div>
                                 <div class="form-group">
                                     <label for="value" class="col-form-label">@lang('settings.value')</label>
-                                    <input type="text" name="value" class="form-control" value="{{$settings->value}}" required>
+                                    <input type="text" name="value" class="form-control" value="{{$setting->value}}" required>
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label class="col-form-label" for="customFile">@lang('news.image')</label>
@@ -82,7 +82,7 @@
 
                                 <div class="form-group col-sm-6 mt-4">
                                     <div class="image">
-                                        <img src="{{url('images/settings').'/'.$settings->image}}" width="200" height="180" alt="">
+                                        <img src="{{url('images/settings').'/'.$setting->image}}" width="200" height="180" alt="">
                                     </div>
                                 </div>
 

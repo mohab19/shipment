@@ -1,0 +1,62 @@
+/*login*/
+body {background-color: #EEE;}
+
+nav {background-color:#343A40;}
+
+.login-table {padding:120px 0px 80px;}
+
+.login-table .row {
+    box-shadow: 0 20px 40px 0 #343A40;
+}
+
+.footer-bottom {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.form,.best-price,.call-us {
+    padding:60px 0px;
+    background-color:#343A40;
+    padding:20px;
+}
+
+.button-login{
+    color:#b24354;
+    background-color: #343A40;
+    display: block;
+    margin: 40px auto;
+}
+
+.login-table .row {background-color: #343A40;}
+
+.login-table .col-lg-4 {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.form {background-color: #b24354;}
+
+.best-price,.call-us {color: #fff;}
+
+.best-price i,.call-us i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:70px;
+    height:70px;
+    border-radius: 50%;
+    border:1px solid #fff;
+    margin: auto;
+    color:#b24354;
+}
+
+.btn:hover {color: #fff}
+
+.btn:focus,
+.form-control:focus {
+    box-shadow: none;
+    border-color:transparent;
+}
+
+.navbar-brand span {color:#b24354}
