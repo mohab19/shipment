@@ -32,13 +32,14 @@
         <link rel="stylesheet" type="text/css" href="{{URL('assets/vendor/datatables/css/buttons.bootstrap4.css')}}">
         <link rel="stylesheet" type="text/css" href="{{URL('assets/vendor/datatables/css/select.bootstrap4.css')}}">
         <link rel="stylesheet" type="text/css" href="{{URL('assets/vendor/datatables/css/fixedHeader.bootstrap4.css')}}">
+        <script src="https://kit.fontawesome.com/4af7d13715.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="{{URL('css/richtext.min.css')}}">
 
         <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css" rel="stylesheet">
 
         @yield('StyleSheets')
 
         @yield('title')
-        <script src="https://kit.fontawesome.com/4af7d13715.js" crossorigin="anonymous"></script>
     </head>
 
     <body>
@@ -117,6 +118,7 @@
         <script src="{{URL('assets/cdn.datatables.net/select/1.2.7/js/dataTables.select.min.js')}}"></script>
         <script src="{{URL('assets/cdn.datatables.net/fixedheader/3.1.5/js/dataTables.fixedHeader.min.js')}}"></script>
         <script src="{{asset('js/intelligent.js')}}" type="text/javascript"></script>
+        <script src="{{asset('js/richtext.min.js')}}" type="text/javascript"></script>
 
         @yield('JavaScript')
 

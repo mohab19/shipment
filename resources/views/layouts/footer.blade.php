@@ -1,7 +1,7 @@
 <!-- start footer -->
 <footer class="py-3 d-flex align-items-center">
     <div class="container d-flex justify-content-center">
-        <p>{{$settings->where('name', 'copyrights')->first()->value}} &copy;</p>
+        <p>{{$contents->where('type', 'copy_rights')->first()["content_".app()->getLocale()]}} &copy;</p>
     </div>
 </footer>
 

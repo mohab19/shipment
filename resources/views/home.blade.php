@@ -9,8 +9,8 @@
 
 	</div>
 	<div class="content">
-		<h2>Welcome to Shipping Company</h2>
-		<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+		<h2>{{$contents->where('type', 'panner')->first()["title_".app()->getLocale()]}}</h2>
+		<p>{{$contents->where('type', 'panner')->first()["content_".app()->getLocale()]}}</p>
 		<span class="btn begin"><i class="fas fa-angle-double-down fa-lg"></i></span>
 	</div>
 </section>
@@ -19,23 +19,15 @@
 <!-- start features -->
 <section class="features">
 	<div class="container text-center">
-		<h2 class="header">WHY CHOOSE SHIPPING <span>INFO</span></h2>
+		<h2 class="header">WHY CHOOSE Deliver <span>Me</span></h2>
 		<div class="row justify-content-between">
-			<div class="feature col-lg-3   col-sm-8">
-				<span><i class="fas fa-dollar-sign fa-3x"></i></span>
-				<h5>Feature</h5>
-				<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+			@foreach($features as $key => $feature)
+			<div class="feature col-lg-3 col-sm-8">
+				<span><i class="{{$feature->value}} fa-3x"></i></span>
+				<h5>{{$feature["title_".app()->getLocale()]}}</h5>
+				<p>{!! $feature["content_".app()->getLocale()] !!}</p>
 			</div>
-			<div class="feature col-lg-3  col-sm-8">
-				<span><i class="fas fa-star fa-3x"></i></span>
-				<h5>Feature</h5>
-				<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
-			</div>
-			<div class="feature col-lg-3   col-sm-8 feat-last">
-				<span><i class="fas fa-truck-moving fa-3x"></i></span>
-				<h5>Feature</h5>
-				<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
-			</div>
+			@endforeach
 		</div>
 	</div>
 </section>
@@ -44,30 +36,24 @@
 <!--start about-->
 <section class="about">
     <div class="container">
-	    <h2 class="text-center py-5">About us</h2>
+	    <h2 class="text-center py-4"></h2>
 	    <div class="row">
 		    <div class="col-lg-6">
 			    <div class="about-text">
-				    <h2 class="sub-title py-3"><span>OUR </span>HISTORY</h2>
-				    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A architecto delectus enim quo magni, eaque, possimus sit fuga impedit animi quod recusandae ducimus iste quas, corporis libero quos deserunt amet.</p>
-				    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti unde laborum at molestiae error rem animi iure vero quidem veniam esse nisi reprehenderit fugiat architecto magnam earum delectus, doloremque quam.</p>
+				    <h2 class="sub-title py-3"><span>{{$contents->where('type', 'about_us')->first()["title_".app()->getLocale()]}}</span></h2>
+				    <p>{{$contents->where('type', 'about_us')->first()["content_".app()->getLocale()]}}</p>
 			    </div>
 			    <div class="about-icon mt-5">
 					<div class="row">
+						@foreach($about_us_features as $key => $feature)
 						<div class="col-md-6">
 							<div class="item">
-								<i class="fas fa-truck my-3 fa-2x"></i>
-								<h3>Ground Shipping</h3>
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis.</p>
+								<i class="{{$feature->value}} my-3 fa-2x"></i>
+								<h3>{{$feature["title_".app()->getLocale()]}}</h3>
+								<p>{{$feature["content_".app()->getLocale()]}}</p>
 							</div>
 						</div>
-						<div class="col-md-6">
-							<div class="item">
-							    <i class="fas fa-plane my-3 fa-2x"></i>
-							    <h3>Ground Shipping</h3>
-							    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis.</p>
-						    </div>
-					    </div>
+						@endforeach
 					</div>
 				</div>
 			</div>
@@ -87,58 +73,34 @@
 		<h2 class="pb-5 text-center">Our Partners</h2>
 		<div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
 			<div class="carousel-inner">
-	  			<div class="carousel-item active">
-					<div class="row">
-						<div class="col-lg-3">
-							<div class="logo">
-					 			<img src="images/delivermy.png"  class="w-50" alt="">
+				@php $counter = 0; @endphp
+				@foreach($our_parteners as $key => $partners)
+					@if($key == 0 || $key%4 == 0)
+		  			<div class="carousel-item @if($key == 0) active @endif">
+						<div class="row">
+					@endif
+							<div class="col-lg-3">
+								<div class="logo">
+						 			<img src="{{url('/images/contents').'/'.$partners->image}}" width="60" height="120
+									" class="w-50" w alt="">
+								</div>
 							</div>
+					@if($key != 0 && $key%3 == 0)
 						</div>
-						<div class="col-lg-3">
-			  				<div class="logo">
-								<img src="images/delivermy.png"  class="w-50" alt="">
-			  				</div>
-		  				</div>
-		  				<div class="col-lg-3">
-			  				<div class="logo">
-								<img src="images/delivermy.png"  class="w-50" alt="">
-			  				</div>
-		  				</div>
-		  				<div class="col-lg-3">
-			  				<div class="logo">
-								<img src="images/delivermy.png"  class="w-50" alt="">
-			  				</div>
-		  				</div>
-					</div>
-	  			</div>
-	  			<div class="carousel-item">
-					<div class="row">
-						<div class="col-lg-3">
-							<div class="logo">
-								<img src="images/delivermy.png"  class="w-50" alt="">
-							</div>
+		  			</div>
+					@elseif($key+1 == count($our_parteners))
 						</div>
-						<div class="col-lg-3">
-			  				<div class="logo">
-								<img src="images/delivermy.png"  class="w-50" alt="">
-			  				</div>
-		  				</div>
-					    <div class="col-lg-3">
-						    <div class="logo">
-								<img src="images/delivermy.png"  class="w-50" alt="">
-					 	    </div>
-					    </div>
-		  				<div class="col-lg-3">
-			  				<div class="logo">
-								<img src="images/delivermy.png"  class="w-50" alt="">
-			  				</div>
-		  				</div>
 					</div>
-	  			</div>
+					@endif
+	  			@endforeach
 			</div>
 			<ol class="carousel-indicators position-static mt-3">
-				<li data-target="#carouselExampleIndicators2" data-slide-to="0" class="active"></li>
-				<li data-target="#carouselExampleIndicators2" data-slide-to="1"></li>
+				@foreach($our_parteners as $key => $partners)
+					@if($key == 0 || $key%4 == 0)
+					<li data-target="#carouselExampleIndicators2" data-slide-to="{{$counter}}" @if($key == 0) class="active" @endif></li>
+					@php $counter++; @endphp
+					@endif
+				@endforeach
 	  		</ol>
   		</div>
   	</div>
@@ -157,8 +119,8 @@
 
 			</div>
 			<div class="col-md-5">
-				<h4>Our Company covers every Major cities</h4>
-				<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."</p>
+				<h4>{{$contents->where('type', 'coverage')->first()["title_".app()->getLocale()]}}</h4>
+				<p>{{$contents->where('type', 'coverage')->first()["content_".app()->getLocale()]}}</p>
 			</div>
 		</div>
 	</div>
@@ -171,8 +133,8 @@
 		<div class="row align-items-center">
 			<div class="col-lg-5">
 				<div class="left">
-					<h2>TRANSPORTATIONS & LOGISTICS</h2>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus dolorem eius eligendi esse quod?</p>
+					<h2>{{$contents->where('type', 'logistics')->first()["title_".app()->getLocale()]}}</h2>
+					<p>{{$contents->where('type', 'logistics')->first()["content_".app()->getLocale()]}}</p>
 				</div>
 			</div>
 			<div class="offset-lg-1 col-lg-6">
@@ -192,48 +154,15 @@
 		<div class="container text-white">
 			<h2 class="text-center">How it work</h2>
 			<div class="row">
+				@foreach($work_hows as $key => $how)
 				<div class="col-lg-4">
 					<div class="step">
-						<span class="number my-3">1</span>
-					 	<h4 class="my-3">Choose Your Service</h4>
-					 	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							Incidunt praesentium dicta consectetur fuga neque fugit a at. Cum quod vero assumenda iusto.
-						</p>
-					 	<ul class="list-unstyled my-3">
-						 	<li><i class="fas fa-check mx-2"></i>Error minus sint nobis dolor</li>
-						 	<li><i class="fas fa-check mx-2"></i>Voluptatum porro expedita labore esse</li>
-						 	<li><i class="fas fa-check mx-2"></i>Voluptas unde sit pariatur earum</li>
-					 	</ul>
+						<span class="number my-3">{{$key+1}}</span>
+					 	<h4 class="my-3">{{$how["title_".app()->getLocale()]}}</h4>
+					 	<p>{{$how["content_".app()->getLocale()]}}</p>
 					</div>
 				</div>
-				<div class="col-lg-4">
-					<div class="step">
-						<span class="number my-3">2</span>
-					 	<h4 class="my-3">Select Your Payment</h4>
-					 	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							Incidunt praesentium dicta consectetur fuga neque fugit a at. Cum quod vero assumenda iusto.
-						</p>
-						<ul class="list-unstyled my-3">
-							<li><i class="fas fa-check mx-2"></i>Error minus sint nobis dolor</li>
-							<li><i class="fas fa-check mx-2"></i>Voluptatum porro expedita labore esse</li>
-							<li><i class="fas fa-check mx-2"></i>Voluptas unde sit pariatur earum</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-4">
-					<div class="step">
-						<span class="number my-3">3</span>
-					 	<h4 class="my-3">Tracking Your Order</h4>
-					 	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							Incidunt praesentium dicta consectetur fuga neque fugit a at. Cum quod vero assumenda iusto.
-						</p>
-						<ul class="list-unstyled my-3">
-							<li><i class="fas fa-check mx-2"></i>Error minus sint nobis dolor</li>
-							<li><i class="fas fa-check mx-2"></i>Voluptatum porro expedita labore esse</li>
-							<li><i class="fas fa-check mx-2"></i>Voluptas unde sit pariatur earum</li>
-						</ul>
-			 		</div>
-				</div>
+				@endforeach
 			</div>
 		</div>
 	</div>
@@ -244,70 +173,40 @@
 <section class="feedback">
   	<div class="container">
 	  	<h2 class="text-center py-3">Happy Clients</h2>
-	  	<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+	  	<div id="client-carousel" class="carousel slide" data-bs-ride="carousel">
 			<div class="carousel-inner">
-		  		<div class="carousel-item active">
-					<div class="row">
-						<div class="col-md-4 ">
-							<div class="feed shadow p-4 text-center">
-								<img src="images/person.jpg" class="w-25 rounded-circle py-3" alt="">
-						 		<p>Incidunt praesentium dicta consectetur fuga neque fugit a at.</p>
-						 		<h4>fathy hasan</h4>
-						 		<p class="text-muted">ui designer</p>
+				@php $counter = 0; @endphp
+				@foreach($happy_clients as $key => $client)
+					@if($key == 0 || $key%3 == 0)
+		  			<div class="carousel-item @if($key == 0) active @endif">
+						<div class="row">
+					@endif
+							<div class="col-md-4">
+								<div class="feed shadow p-4 text-center">
+									<img src="{{url('/images/contents').'/'.$client->image}}" width="50" height="100" class="w-25 rounded-circle py-3" alt="">
+							 		<p>{{$client["content_".app()->getLocale()]}}</p>
+						 			<h4>{{$client["title_".app()->getLocale()]}}</h4>
+							 		<p class="text-muted">{{$client["value"]}}</p>
+								</div>
 							</div>
+					@if($key != 0 && $key%2 == 0)
 						</div>
-						<div class="col-md-4">
-					  		<div class="feed shadow p-4 text-center">
-						  		<img src="images/person.jpg" class="w-25 rounded-circle py-3" alt="">
-						   		<p>Incidunt praesentium dicta consectetur fuga neque fugit a at.</p>
-						   		<h4>fathy hasan</h4>
-						   		<p class="text-muted">ui designer</p>
-					  		</div>
-			  			</div>
-			  			<div class="col-md-4">
-				  			<div class="feed shadow p-4 text-center">
-					  			<img src="images/person.jpg" class="w-25 rounded-circle py-3" alt="">
-				   				<p>Incidunt praesentium dicta consectetur fuga neque fugit a at.</p>
-				   				<h4>fathy hasan</h4>
-					   			<p class="text-muted">ui designer</p>
-				  			</div>
-			  			</div>
-					</div>
-	  			</div>
-		  		<div class="carousel-item">
-					<div class="row">
-						<div class="col-md-4">
-							<div class="feed shadow p-4 text-center">
-								<img src="images/person.jpg" class="w-25 rounded-circle py-3" alt="">
-						 		<p>Incidunt praesentium dicta consectetur fuga neque fugit a at.</p>
-					 			<h4>fathy hasan</h4>
-						 		<p class="text-muted">ui designer</p>
-							</div>
+		  			</div>
+					@elseif($key+1 == count($happy_clients))
 						</div>
-						<div class="col-md-4">
-				  			<div class="feed shadow p-4 text-center">
-						  		<img src="images/person.jpg" class="w-25 rounded-circle py-3" alt="">
-						   		<p>Incidunt praesentium dicta consectetur fuga neque fugit a at.</p>
-						   		<h4>fathy hasan</h4>
-						   		<p class="text-muted">ui designer</p>
-				  			</div>
-			  			</div>
-			  			<div class="col-md-4">
-				  			<div class="feed shadow p-4 text-center ">
-					  			<img src="images/person.jpg" class="w-25 rounded-circle py-3" alt="">
-					   			<p>Incidunt praesentium dicta consectetur fuga neque fugit a at.</p>
-					   			<h4>fathy hasan</h4>
-					   			<p class="text-muted">ui designer</p>
-				  			</div>
-			  			</div>
 					</div>
-		  		</div>
+					@endif
+	  			@endforeach
 			</div>
-	  	</div>
-	  	<ol class="carousel-indicators position-static">
-			<li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
-			<li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
-	  	</ol>
+			<ol class="carousel-indicators position-static mt-3">
+				@foreach($happy_clients as $key => $client)
+					@if($key == 0 || $key%4 == 0)
+					<li data-target="#client-carousel" data-slide-to="{{$counter}}" @if($key == 0) class="active" @endif></li>
+					@php $counter++; @endphp
+					@endif
+				@endforeach
+	  		</ol>
+		</div>
   	</div>
 </section>
 <!-- end feedback -->

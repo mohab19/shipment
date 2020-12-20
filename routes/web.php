@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::redirect('/', 'ar');
+Route::redirect('/', 'en');
 
 Route::group(['prefix' => '{language?}'], function () {
     Auth::routes();
@@ -34,12 +34,9 @@ Route::group(['prefix' => '{language?}'], function () {
             Route::post('users_search', ['uses' => 'UserController@search', 'as' => 'users_view']);
             Route::get('users/activation/{user}','UserController@activation');
             /*** System routes ***/
-            Route::resource('settings', 'SettingsController');
             Route::resource('admins', 'AdminController');
-            Route::resource('radars', 'RadarController');
-            Route::resource('types', 'TypeController');
-            Route::resource('satellites', 'SatelliteController');
-            Route::resource('news', 'NewsController');
+            Route::resource('settings', 'SettingsController');
+            Route::resource('contents', 'ContentController');
         });
     });
 });

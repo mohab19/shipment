@@ -17,16 +17,16 @@ top button-->
         <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
             <ul class="navbar-nav row justify-content-center">
                 <li class="nav-item active col">
-                    <a class="nav-link" href="{{url('/'.app()->getLocale())}}">Home</a>
+                    <a class="nav-link" href="{{url('/'.app()->getLocale())}}">@lang('main.home')</a>
                 </li>
                 <li class="nav-item col">
-                    <a class="nav-link" href="{{url(app()->getLocale().'/pricing')}}">Pricing</a>
+                    <a class="nav-link" href="{{url(app()->getLocale().'/pricing')}}">@lang('main.pricing')</a>
                 </li>
                 <li class="nav-item col">
-                    <a class="nav-link" href="{{url(app()->getLocale().'/contact_us')}}">Contact us</a>
+                    <a class="nav-link" href="{{url(app()->getLocale().'/contact_us')}}">@lang('main.contact_us')</a>
                 </li>
                 <li class="nav-item col">
-                    <a class="nav-link" href="{{url(app()->getLocale().'/login')}}">Login</a>
+                    <a class="nav-link" href="{{url(app()->getLocale().'/login')}}">@lang('main.login')</a>
                 </li>
             </ul>
         </div>

@@ -9,54 +9,20 @@
         <h3 class="mt-5">Pricing</h3>
         <p class="lead">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
         <div class="row mt-5 align-items-center justify-content-between">
+            @foreach($pricing as $key => $price)
             <div class=" col-lg-4">
                 <div class="price shadow p-4">
-                    <h4 class="text-center">Basic</h4>
-                    <h3 class="price text-center">$47</h3>
-                    <ul class="list-unstyled">
-                        <li class="d-flex"> <i class="fas fa-check mx-2"></i><p>Officia quaerat eaque neque</p></li>
-                        <li class="d-flex"><i class="fas fa-check mx-2"></i><p>Possimus aut consequuntur</p> </li>
-                        <li class="d-flex"><i class="fas fa-check mx-2"></i><p>Lorem ipsum dolor sit amet</p></li>
-                        <li class="d-flex"><i class="fas fa-check mx-2"></i><p>Consectetur adipisicing elit</p></li>
-                        <li class="d-flex"><i class="fas fa-check mx-2"></i><p>Dolorum esse odio </p></li>
-                    </ul>
+                    <h4 class="text-center">{{$price["title_".app()->getLocale()]}}</h4>
+                    <h3 class="price text-center">{{$price->value}}</h3>
+                    <p>
+                        {{$price["content_".app()->getLocale()]}}
+                    </p>
                     <div class="text-center">
                         <button class="btn btn-primary text-center mt-4">Buy Now</button>
                     </div>
                 </div>
             </div>
-            <div class=" col-lg-4">
-                <div class="price shadow p-4">
-                    <h4 class="text-center">Premium</h4>
-                    <h3 class="price text-center">$47</h3>
-                    <ul class="list-unstyled">
-                        <li class="d-flex"> <i class="fas fa-check mx-2"></i><p>Officia quaerat eaque neque</p></li>
-                        <li class="d-flex"><i class="fas fa-check mx-2"></i><p>Possimus aut consequuntur</p> </li>
-                        <li class="d-flex"><i class="fas fa-check mx-2"></i><p>Lorem ipsum dolor sit amet</p></li>
-                        <li class="d-flex"><i class="fas fa-check mx-2"></i><p>Consectetur adipisicing elit</p></li>
-                        <li class="d-flex"><i class="fas fa-check mx-2"></i><p>Dolorum esse odio </p></li>
-                    </ul>
-                    <div class="text-center">
-                        <button class="btn btn-primary text-center mt-4">Buy Now</button>
-                    </div>
-                </div>
-            </div>
-            <div class=" col-lg-4">
-                <div class="price shadow p-4">
-                    <h4 class="text-center">Professional</h4>
-                    <h3 class="text-center price">$47</h3>
-                    <ul class="list-unstyled">
-                        <li class="d-flex"> <i class="fas fa-check mx-2"></i><p>Officia quaerat eaque neque</p></li>
-                        <li class="d-flex"><i class="fas fa-check mx-2"></i><p>Possimus aut consequuntur</p> </li>
-                        <li class="d-flex"><i class="fas fa-check mx-2"></i><p>Lorem ipsum dolor sit amet</p></li>
-                        <li class="d-flex"><i class="fas fa-check mx-2"></i><p>Consectetur adipisicing elit</p></li>
-                        <li class="d-flex"><i class="fas fa-check mx-2"></i><p>Dolorum esse odio </p></li>
-                    </ul>
-                    <div class="text-center">
-                        <button class="btn btn-primary text-center mt-4">Buy Now</button>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>

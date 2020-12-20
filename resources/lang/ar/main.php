@@ -167,7 +167,7 @@ return [
     'are_you_sure_you_want_to_delete' => ' Are you sure you want to delete?',
     'are_you_sure_you_want_to_reset_password' => ' Are you sure you want to reset password?',
     'cancel' => 'Cancel',
-    'contactus' => 'Contact us',
+    'contactus' => 'تواصل معنا',
     'contactus_view' => 'View',
     'blocked_users' => 'Blocked Users',
     'blocked_users_view' => 'View',
@@ -942,6 +942,9 @@ return [
     'coupon_id' => 'Coupon ID',
     'attach' => 'Attach',
     'last_login' => 'Last Login',
+    'login' => 'تسجيل الدخول',
+    'pricing' => 'التسعير',
+    'contact_us' => 'تواصل معنا',
 
     'company_request' => 'Company Request',
     'company_request_view' => 'View',

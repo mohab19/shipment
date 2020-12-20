@@ -82,6 +82,9 @@ return [
     'medical_type' => 'Medical Type',
     'partner' => 'Partner',
     'sponsorId' => 'Sponsor Id',
+    'login' => 'Login',
+    'pricing' => 'Pricing',
+    'contact_us' => 'Contact us',
 
     'last_login_date' => 'Last Login Date',
     'login_type' => 'Login Type',
