@@ -24,6 +24,7 @@ Route::group(['prefix' => '{language?}'], function () {
     Route::get('logout', 'Auth\LoginController@logout')->name('logout');
     Route::get('admin/login', 'Auth\AdminLoginController@showLoginForm')->name('admin-login');
     Route::post('admin/login', 'Auth\AdminLoginController@login')->name('admin-login.submit');
+    Route::post('contact_us', 'HomeController@send_message')->name('contact_us');
 
     Route::group(['middleware' => ['auth:admin']], function () {
         /*** home page admin route ***/
@@ -37,6 +38,7 @@ Route::group(['prefix' => '{language?}'], function () {
             Route::resource('admins', 'AdminController');
             Route::resource('settings', 'SettingsController');
             Route::resource('contents', 'ContentController');
+            Route::resource('pricing', 'PricingController');
         });
     });
 });

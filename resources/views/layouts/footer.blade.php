@@ -1,8 +1,8 @@
 <!-- start footer -->
 <footer class="py-3 d-flex align-items-center">
-    <div class="container d-flex justify-content-center">
-        <p>{{$contents->where('type', 'copy_rights')->first()["content_".app()->getLocale()]}} &copy;</p>
-    </div>
+<div class="container text-center">
+    <p>{{$contents->where('type', 'copy_rights')->first()["content_".app()->getLocale()]}} &copy;</p>
+</div> 
 </footer>
 
 <div class="footer-bottom  text-center">

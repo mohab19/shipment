@@ -18,6 +18,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('contents.index', app()->getLocale())}}"><i class="fas fa-file-word"></i> @lang('contents.contents')</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('pricing.index', app()->getLocale())}}"><i class="fas fa-file-word"></i> @lang('pricing.pricing')</a>
+                </li>
 
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('settings.index', app()->getLocale())}}"><i class="fas fa-cogs"></i> @lang('settings.settings')</a>

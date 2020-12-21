@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Pricing;
+use App\Http\Requests\PricingRequest;
 use Illuminate\Http\Request;
+use App\Pricing;
 
 class PricingController extends Controller
 {
@@ -11,10 +12,11 @@ class PricingController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-     */
+    **/
     public function index()
     {
-
+        $pricing = Pricing::all();
+        return view("pricing.index", compact('pricing'));
     }
 
     /**
@@ -24,7 +26,7 @@ class PricingController extends Controller
      */
     public function create()
     {
-        //
+        return view("pricing.create");
     }
 
     /**
@@ -33,9 +35,9 @@ class PricingController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store($lang, PricingRequest $request)
     {
-        //
+        $price = Pricing::create($request->all());
     }
 
     /**
@@ -44,7 +46,7 @@ class PricingController extends Controller
      * @param  \App\Pricing  $pricing
      * @return \Illuminate\Http\Response
      */
-    public function show(Pricing $pricing)
+    public function show($lang, Pricing $pricing)
     {
         //
     }
@@ -55,9 +57,9 @@ class PricingController extends Controller
      * @param  \App\Pricing  $pricing
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pricing $pricing)
+    public function edit($lang, Pricing $pricing)
     {
-        //
+        return view("pricing.edit", compact("pricing"));
     }
 
     /**
@@ -67,9 +69,9 @@ class PricingController extends Controller
      * @param  \App\Pricing  $pricing
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pricing $pricing)
+    public function update($lang, PricingRequest $request, Pricing $pricing)
     {
-        //
+        $pricing->update($request->all());
     }
 
     /**
@@ -78,8 +80,8 @@ class PricingController extends Controller
      * @param  \App\Pricing  $pricing
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pricing $pricing)
+    public function destroy($lang, Pricing $pricing)
     {
-        //
+        $pricing->delete();
     }
 }

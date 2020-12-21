@@ -7,12 +7,12 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="locale" content="{{ app()->getLocale() }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
-
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     @if(app()->getLocale() == 'ar')
     <link rel="stylesheet" href="{{ asset('css/bootstrapAr.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styleAr.css') }}">
     @endif
+    <link rel="stylesheet" href="{{ asset('css/media.css') }}">
     @stack('styles')
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap">
     <!--[if lt IE 9]>

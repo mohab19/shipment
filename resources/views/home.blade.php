@@ -22,7 +22,7 @@
 		<h2 class="header">WHY CHOOSE Deliver <span>Me</span></h2>
 		<div class="row justify-content-between">
 			@foreach($features as $key => $feature)
-			<div class="feature col-lg-3 col-sm-8">
+			<div class="feature col-lg-3 ">
 				<span><i class="{{$feature->value}} fa-3x"></i></span>
 				<h5>{{$feature["title_".app()->getLocale()]}}</h5>
 				<p>{!! $feature["content_".app()->getLocale()] !!}</p>
@@ -48,7 +48,7 @@
 						@foreach($about_us_features as $key => $feature)
 						<div class="col-md-6">
 							<div class="item">
-								<i class="{{$feature->value}} my-3 fa-2x"></i>
+								<i class="{{$feature->value}} my-3 fa-2x" style="color:#B24354"></i>
 								<h3>{{$feature["title_".app()->getLocale()]}}</h3>
 								<p>{{$feature["content_".app()->getLocale()]}}</p>
 							</div>

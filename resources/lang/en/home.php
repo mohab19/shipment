@@ -13,20 +13,21 @@ return [
     |
     */
 
-    'wind_speed'         => 'Wind speed',
-    'home'               => 'Home',
-    'climate'            => 'Climate',
-    'your_news'          => 'followers News',
-    'radar'              => 'Radar',
-    'login'              => 'create new account | log in',
-    'lang'               => 'English',
-    'lang_op'            => 'عربي',
-    'max'                => 'Max',
-    'min'                => 'Min',
-    'search'             => 'Search for your city',
-    'lng'                => 'ar',
-    'weather'            => 'Weather',
-    'news'               => 'News',
-    'satellite'          => 'Satellite',
+    'home'           => 'Home',
+    'lang'           => 'English',
+    'lang_op'        => 'عربي',
+    'lng'            => 'ar',
+
+    'get_estimate'          => 'Get Qouta Estimation',
+    'no_of_shipment'        => 'Number of Shipment / Month',
+    'ship_from'             => 'Ship from',
+    'get_quota'             => 'Get qouta',
+    'enter_name'            => 'Full Name',
+    'enter_email'           => 'E-mail Address',
+    'login'                 => 'Login',
+    'register'              => 'Register',
+    'password'              => 'Password',
+    'password_confirmation' => 'Password Confirmation',
+    'welcome'               => 'Welcome',
 
 ];

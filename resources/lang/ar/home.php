@@ -13,20 +13,21 @@ return [
     |
     */
 
-    'wind_speed' => 'سرعة الرياح',
-    'home'       => 'الرئيسية',
-    'climate'    => 'الطقس',
-    'your_news'  => 'أخبار المتابعين',
-    'radar'      => 'رادار',
-    'login'      => 'تسجبل الدخول | تسجيل جديد',
-    'lang'       => 'عربي',
-    'lang_op'    => 'English',
-    'max'        => 'العظمى',
-    'min'        => 'الصغرى',
-    'search'     => 'ابحث عن مدينتك',
-    'lng'        => 'en',
-    'weather'    => 'الطقس',
-    'news'       => 'أخبار',
-    'satellite'  => 'أقمار صناعية',
+    'home'           => 'الرئيسية',
+    'lang'           => 'عربي',
+    'lang_op'        => 'English',
+    'lng'            => 'en',
+
+    'get_estimate'          => 'احصل ع تقدير الأسعار',
+    'no_of_shipment'        => 'عدد الشحنات في الشهر',
+    'ship_from'             => 'الشحن من',
+    'get_quota'             => 'احسب الكوتا',
+    'enter_name'            => 'ادخل الاسم بالكامل',
+    'enter_email'           => 'ادخل البريد الالكتروني',
+    'login'                 => 'تسجيل الدخول',
+    'register'              => 'تسجيل جديد',
+    'password'              => 'كلمة السر',
+    'password_confirmation' => 'تأكيد كلمة السر',
+    'welcome'               => 'مرحباً',
 
 ];

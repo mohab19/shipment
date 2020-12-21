@@ -26,3 +26,5 @@ $(window).scroll(function(){
     }
 });
 
+
+console.log("helo")

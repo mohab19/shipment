@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
+use App\Mail\ContactUs;
+use App\Pricing;
 
 class HomeController extends Controller
 {
@@ -23,7 +26,8 @@ class HomeController extends Controller
      */
     public function pricing()
     {
-        return view('pricing');
+        $pricings = Pricing::all();
+        return view('pricing', compact('pricings'));
     }
 
     /**
@@ -34,6 +38,11 @@ class HomeController extends Controller
     public function contact_us()
     {
         return view('contact_us');
+    }
+
+    public function send_message(Request $request)
+    {
+        Mail::to("")->send(new ContactUs($request));
     }
 
 }
