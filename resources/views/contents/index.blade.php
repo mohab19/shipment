@@ -76,9 +76,11 @@
                                                     <a class="btn btn-success" href="{{URL( app()->getLocale() . '/admin/contents/' . $content->id . '/edit')}}" style="padding: 5px 10px;">
                                                         <i class="fas fa-edit"></i>
                                                     </a>
+                                                    @if($content->type == 'happy_client' || $content->type == 'our_parteners')
                                                     <span class="delete_this btn btn-danger" data-id="{{$content->id}}" data-type="Content" data-url="content" style="padding: 5px 10px;">
                                                         <i class="fas fa-trash"></i>
                                                     </span>
+                                                    @endif
                                                 </td>
                                             </tr>
                                             @endforeach

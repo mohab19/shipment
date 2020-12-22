@@ -20,7 +20,7 @@ class ContactUs extends Mailable
      */
     public function __construct($email)
     {
-        $this->email = $email
+        $this->email = $email;
     }
 
     /**

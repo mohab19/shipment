@@ -70,9 +70,16 @@
                                     <label for="content_en" class="col-form-label">@lang('contents.content_en')</label>
                                     <textarea type="text" name="content_en" class="form-control"></textarea>
                                 </div>
-                                <div class="form-group">
+                                <!--<div class="form-group">
                                     <label for="type" class="col-form-label">@lang('settings.type')</label>
                                     <input type="text" name="type" class="form-control" required>
+                                </div>-->
+                                <div class="form-group">
+                                    <label for="value" class="col-form-label">@lang('settings.type')</label>
+                                    <select class="form-control" name="type">
+                                        <option value="happy_client">@lang('home.happy_clients')</option>
+                                        <option value="our_parteners">@lang('home.our_parteners')</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="value" class="col-form-label">@lang('settings.value')</label>

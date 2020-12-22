@@ -69,28 +69,19 @@
     </div>
 </section>
 @endsection
-@section('JavaScript')
+@push('scripts')
 <script type="text/javascript">
-    // $(document).ready(function() {
-    //     $('#get_quota').get(0).on('click', function(e) {
-    //         e.preventDefault();
-    //         var city           = $('#shipfrom').val();
-    //         var no_of_shipment = $('#no_of_shipment').val();
-    //         if(city == 0 || no_of_shipment == "") {
-    //             alert("please inter the missing inputs!");
-    //         } else {
-    //             $('table').toggle();
-    //         }
-    //     });
-    // });
-
-    document.querySelector(".table").style.display="none"; 
-
-// let button=document.getElementById("get_quota");
-//     button.addEvenetListener("click",function(){
-//     document.querySelector(".table").style.display="block"; 
-//     alert()   
-//     }); 
-console.log("helo")
+    $(document).ready(function() {
+        $('#get_quota').on('click', function(e) {
+            e.preventDefault();
+            var city           = $('#shipfrom').val();
+            var no_of_shipment = $('#no_of_shipment').val();
+            if(city == 0 || no_of_shipment == "") {
+                alert("please inter the missing inputs!");
+            } else {
+                $('table').toggle();
+            }
+        });
+    });
  </script>
-@endsection
+@endpush

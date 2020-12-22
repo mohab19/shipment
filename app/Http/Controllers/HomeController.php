@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use App\Mail\ContactUs;
 use App\Pricing;
+use App\Settings;
 
 class HomeController extends Controller
 {
@@ -42,7 +43,8 @@ class HomeController extends Controller
 
     public function send_message(Request $request)
     {
-        Mail::to("")->send(new ContactUs($request));
+        $email = Settings::where('name', 'email')->first()->value;
+        Mail::to($email)->send(new ContactUs($request));
     }
 
 }

@@ -19,9 +19,9 @@
                 <h1 class="page-title">@lang('settings.settings')
                     <small>@lang('main.view')</small>
                 </h1>
-                <a href="{{ URL( app()->getLocale() . '/admin/settings/create') }}" class="btn btn-primary" id="sample_editable_1_new" style="float: right;">@lang('main.add_new')
+                <!--<a href="{{ URL( app()->getLocale() . '/admin/settings/create') }}" class="btn btn-primary" id="sample_editable_1_new" style="float: right;">@lang('main.add_new')
                     <i class="fa fa-plus"></i>
-                </a>
+                </a>-->
                 <div class="page-breadcrumb">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
@@ -74,9 +74,9 @@
                                                     <a class="btn btn-success" href="{{URL( app()->getLocale() . '/admin/settings/' . $setting->id . '/edit')}}" style="padding: 5px 10px;">
                                                         <i class="fas fa-edit"></i>
                                                     </a>
-                                                    <span class="delete_this btn btn-danger" data-id="{{$setting->id}}" data-type="Setting" data-url="settings" style="padding: 5px 10px;">
+                                                    <!--<span class="delete_this btn btn-danger" data-id="{{$setting->id}}" data-type="Setting" data-url="settings" style="padding: 5px 10px;">
                                                         <i class="fas fa-trash"></i>
-                                                    </span>
+                                                    </span>-->
                                                 </td>
                                             </tr>
                                             @endforeach

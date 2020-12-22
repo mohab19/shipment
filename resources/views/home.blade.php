@@ -19,7 +19,7 @@
 <!-- start features -->
 <section class="features">
 	<div class="container text-center">
-		<h2 class="header">WHY CHOOSE Deliver <span>Me</span></h2>
+		<h2 class="header">@lang('home.why_choose') <span>@lang('home.me')</span></h2>
 		<div class="row justify-content-between">
 			@foreach($features as $key => $feature)
 			<div class="feature col-lg-3 ">
@@ -70,7 +70,7 @@
 <!-- start parteners -->
 <section class="partners">
 	<div class="container">
-		<h2 class="pb-5 text-center">Our Partners</h2>
+		<h2 class="pb-5 text-center">@lang('home.our_parteners')</h2>
 		<div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
 			<div class="carousel-inner">
 				@php $counter = 0; @endphp
@@ -113,12 +113,14 @@
 
 	</div>
 	<div class="container text-center">
-		<h2>HOW MUCH OUR COMPANY COVERS</h2>
+		<h2>@lang('home.how_much')</h2>
 		<div class="row">
-			<div class="col-md-7">
-
+			<div class="col-md-6 mt-3">
+				<div class="map-img">
+					<img src="{{asset('images/map.jpg')}}" class="img-fluid" alt="map">
+				</div>
 			</div>
-			<div class="col-md-5">
+			<div class="offset-lg-1 col-md-5">
 				<h4>{{$contents->where('type', 'coverage')->first()["title_".app()->getLocale()]}}</h4>
 				<p>{{$contents->where('type', 'coverage')->first()["content_".app()->getLocale()]}}</p>
 			</div>
@@ -140,7 +142,7 @@
 			<div class="offset-lg-1 col-lg-6">
 				<div class="right d-flex">
 					<input type="text" class="w-75 p-2">
-					<button class="btn track">Track Now</button>
+					<button class="btn track">@lang('home.track_now')</button>
 				</div>
 			</div>
 		</div>
@@ -152,7 +154,7 @@
 <section class="work">
 	<div class="overlay">
 		<div class="container text-white">
-			<h2 class="text-center">How it work</h2>
+			<h2 class="text-center">@lang('home.how_works')</h2>
 			<div class="row">
 				@foreach($work_hows as $key => $how)
 				<div class="col-lg-4">
@@ -172,7 +174,7 @@
 <!-- start feedback -->
 <section class="feedback">
   	<div class="container">
-	  	<h2 class="text-center py-3">Happy Clients</h2>
+	  	<h2 class="text-center py-3">@lang('home.happy_clients')</h2>
 	  	<div id="client-carousel" class="carousel slide" data-bs-ride="carousel">
 			<div class="carousel-inner">
 				@php $counter = 0; @endphp
