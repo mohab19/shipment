@@ -6,10 +6,10 @@
 
 
 .contact-form{padding:30px;
-              background-color: #b24354;
+              background-color: #6BCBD9;
               border-radius: 30px;
-              margin: 20px 0px;}  
-              
+              margin: 20px 0px;}
+
 .form-group input{width:48% !important}
 
 .form-group{justify-content: space-between;}
@@ -17,4 +17,4 @@
 textarea{border-color: transparent;
          border-radius: 5px;  }
 
-.navbar-brand span{color:#b24354}         
+.navbar-brand span{color:#6BCBD9}         

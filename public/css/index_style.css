@@ -60,8 +60,10 @@ nav ul li:hover {
 	border-bottom: 2px solid #6BCBD9;
 }
 
-.navbar-toggler{cursor: pointer;
-				color:#6BCBD9;}
+.navbar-toggler {
+	cursor: pointer;
+	color:#6BCBD9;
+}
 
 .navbar-brand span{color:#343A40}
 

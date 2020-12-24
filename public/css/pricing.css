@@ -1,9 +1,9 @@
 .pricing{padding:60px 0px;
          background-color: #F6F5F5;}
 
-.pricing li{margin-top: 20px;} 
+.pricing li{margin-top: 20px;}
 
-h3.price,.fa-check{color: #b24354}  
+h3.price,.fa-check{color: #6BCBD9}
 
 .table{display: none;}
 
@@ -17,26 +17,26 @@ h3.price,.fa-check{color: #b24354}
         font-size: 15px;
         font-family: 'Roboto',Helvetica,Arial,Lucida,sans-serif;
         font-weight: normal;
-        
+
     }
 
 
-nav{background-color: #b24354;}
- 
+nav{background-color: #6BCBD9;}
+
 .quote{padding:60px 0px;
-        background-color: #EEE}  
+        background-color: #EEE}
 
 nav a{transition: all .5s ease-in-out;}
 
 nav a:hover,.navbar-brand span{color:#343A40 }
 
-.btn-primary{background-color: #b24354;
-             border-color: #b24354;}
+.btn-primary{background-color: #6BCBD9;
+             border-color: #6BCBD9;}
 .btn-primary:hover{background-color: #343A40;
                    border-color: #343A40;}
 
 .startbosto {
-background: #b24354;
+background: #6BCBD9;
 color: #fff;
 padding: 11px 28px;
 font-size: 18px;
@@ -46,6 +46,6 @@ border-radius: 25px;
 line-height: 24px;
 font-weight: 700;
 margin: auto;
-text-decoration: none;}  
+text-decoration: none;}
 
 .startbosto:hover{color:#fff}

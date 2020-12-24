@@ -27,14 +27,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-12">
-                <i class="fas fa-fax my-2"></i> <b>: 13235551234@efaxsend.com</b>
-                </div>
-                <div class="col-lg-12">
-                <i class="far fa-envelope my-2"></i> <b>: shipment@hotmail.com</b>
-                </div>
-                </div>
-                            </div>
             </div>
             <div class="col-lg-6">
                 <form class="contact-form text-center" action="{{url(app()->getLocale().'/contact_us')}}" method="post">
