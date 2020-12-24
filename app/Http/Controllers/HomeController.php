@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Pricing;
 
 class HomeController extends Controller
 {
@@ -23,7 +24,8 @@ class HomeController extends Controller
      */
     public function pricing()
     {
-        return view('pricing');
+        $pricings = Pricing::all();
+        return view('pricing', compact('pricings'));
     }
 
     /**

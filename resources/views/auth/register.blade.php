@@ -1,77 +1,77 @@
 @extends('layouts.app')
-
+@push('styles')
+<link rel="stylesheet" href="{{ asset('css/index_style.css') }}">
+<link rel="stylesheet" href="{{ asset('css/login_style.css') }}">
+<link rel="stylesheet" href="{{ asset('css/media.css') }}">
+<style media="screen">
+    .hr {
+        background: #fff;
+        width: 50%;
+        margin: 0 auto;
+        padding: 0;
+    }
+    .or-span {
+        color: #fff;
+        text-align: center;
+        position: absolute;
+        background: #b24354;
+        bottom: 92px;
+        left: 172px;
+        padding: 0 10px;
+    }
+    .button-login {
+        padding: 10px;
+        margin: 18px auto;
+    }
+</style>
+@endpush
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+<!--sart login-->
+<section class="login-table">
+    <div class="container">
+        <div class="row align-items-center ">
+            <div class="col-lg-4">
+                <form class="form" action="{{url('/'.app()->getLocale().'/register')}}" method="post">
+                    @csrf
+                    <div class="form-group">
+                        <label for="inputName"></label>
+                        <input type="text" placeholder="@lang('home.enter_name')" name="name" class="form-control d-block">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail"></label>
+                        <input type="text" placeholder="@lang('home.enter_email')" name="email" class="form-control d-block">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail"></label>
+                        <input type="password" placeholder="@lang('home.password')" name="password" class="form-control d-block">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail"></label>
+                        <input type="password" placeholder="@lang('home.password_confirmation')" name="password_confirmation" class="form-control d-block">
+                    </div>
+                    <div class="form-group text-center">
+                        <button type="submit" class="btn w-50 button-login">@lang('home.register')</button>
+                        <hr class="hr">
+                        <span class="or-span">or</span>
+                        <a href="{{url('/'.app()->getLocale().'/login')}}" class="btn w-50 button-login">@lang('home.login')</a>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-4">
+                <div class="best-price text-center">
+                    <i class="fas fa-dollar-sign fa-2x"></i>
+                    <h4 class="mt-5">{{$contents->where('type', 'brief')->first()['title_'.app()->getLocale()]}}</h4>
+                    <p class="text-muted">{{$contents->where('type', 'brief')->first()['content_'.app()->getLocale()]}}</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="call-us text-center">
+                    <i class="fas fa-phone fa-2x"></i>
+                    <h4 class="mt-5">{{$contents->where('type', 'support')->first()['title_'.app()->getLocale()]}}</h4>
+                    <p class="text-muted">{{$contents->where('type', 'support')->first()['content_'.app()->getLocale()]}}</p>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 @endsection

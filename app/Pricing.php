@@ -9,5 +9,5 @@ class Pricing extends Model
 {
 	use SoftDeletes;
 
-    protected $fillable = ['title_ar', 'title_en', 'content_ar', 'content_en', 'type', 'value'];
+    protected $fillable = ['city_ar', 'city_en', 'price', 'note_ar', 'note_en'];
 }

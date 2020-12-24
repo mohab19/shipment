@@ -3,9 +3,14 @@ $(document).ready(function() {
 	$('html,body').animate({
 		scrollTop: $(".features").offset().top}, 'slow');
 	});
+	
 });
 
+// $('b[data-toggle="tooltip"]').tooltip();
 
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
 // navbar background changes
 
 let topsec=$(".main-panel .content").offset().top - 200 ;
@@ -25,4 +30,3 @@ $(window).scroll(function(){
 	$(".navbar-brand span").css("color","#b24354");
     }
 });
-

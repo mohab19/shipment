@@ -13,15 +13,15 @@ body {
 	right: 50;
 }
 
-
-
 .header span {
-	color: #b24354;
+	color: #6BCBD9;
 }
 
-.navbar{transition: all .5s ease-in-out;
- padding-top: 0px;
- padding-bottom: 0px;}
+.navbar{
+	transition: all .5s ease-in-out;
+ 	padding-top: 0px;
+ 	padding-bottom: 0px;
+}
 
 nav a {
 	text-decoration: none;
@@ -30,18 +30,20 @@ nav a {
 
 nav a:hover {
 	text-decoration: none;
-	color: #b24354;
+	color: #6BCBD9;
 }
 
 nav .navbar-brand {
-	width: 50%;
+	width: 35%;
 }
 
-.navbar-brand .img-fluid{ max-width: 20%;
-                          height: 70px;}
+.navbar-brand .img-fluid {
+	max-width: 20%;
+    height: 70px;
+}
 
 nav .collapse {
-	width: 50%;
+	width: 80%;
 }
 
 nav ul {
@@ -55,13 +57,13 @@ nav ul li {
 }
 
 nav ul li:hover {
-	border-bottom: 2px solid #b24354;
+	border-bottom: 2px solid #6BCBD9;
 }
 
 .navbar-toggler{cursor: pointer;
-				color:#b24354;}
-				
-.navbar-brand span{color:#343A40} 
+				color:#6BCBD9;}
+
+.navbar-brand span{color:#343A40}
 
 .main-panel::before {
 	background: url("../images/shipping-truck.jpg") no-repeat center center fixed;
@@ -119,8 +121,9 @@ nav ul li:hover {
 	font-size: 1em;
 }
 
+
 .main-panel .content span {
-	background: #b24354;
+	background: #6BCBD9;
 	color: #fff;
 	border-radius: 50% 50%;
 	padding: 10 20;
@@ -131,6 +134,13 @@ nav ul li:hover {
 .main-panel .content span:hover {
 	cursor: pointer;
 }
+
+
+/*map dott */
+/* .dot1{position: relative;
+	  top:50%;
+	  left:400px } */
+
 
 .features {
 	padding:60px 0px;
@@ -144,7 +154,7 @@ nav ul li:hover {
 	height: 300px;
 	border-radius: 50%;
 	color: #fff;
-	background:#b24354;
+	background:#6BCBD9;
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
@@ -192,18 +202,18 @@ nav ul li:hover {
 
 /*about*/
 .about{padding:60px 0px;}
-.about h2.sub-title{color:#b24354;
+.about h2.sub-title{color:#6BCBD9;
 					position: relative;}
-					
+
 .about h2 span::before{content: "";
 					position: absolute;
 					top:60px;
 					left:0px;
 					width:10%;
 					height:4px;
-					background-color: #b24354;}
+					background-color: #6BCBD9;}
 
-.fa-plane,.fa-truck{color:#b24354}
+.fa-plane,.fa-truck{color:#6BCBD9}
 
 /*work*/
 .work{background-image: url(../images/hero_bg_1.jpg);
@@ -211,10 +221,10 @@ nav ul li:hover {
 	  background-size: cover;
 	  background-position: center center;}
 
-.work h2{color:#b24354;
+.work h2{color:#6BCBD9;
          font-weight: 600;}
 
-.work .overlay{padding: 60px 0px;}	  
+.work .overlay{padding: 60px 0px;}
 
 .work .overlay{background: rgba(0, 0, 0, 0.7);}
 
@@ -223,7 +233,7 @@ nav ul li:hover {
 		   height:50px;
 		   border-radius: 50%;
 		   border:1px solid #fff ;
-		   color:#b24354;
+		   color:#6BCBD9;
 		   font-size: 30px;
 		   align-items: center;
 		   justify-content: center;}
@@ -233,16 +243,16 @@ nav ul li:hover {
 /*partness*/
 .partners{padding:60px 0px;
 		  background-color: #EDEDED;}
-		  
-	  
+
+
 
 .logo{text-align: center;}
 
 /*transport*/
 .transport{padding:60px 0px;
-		   background-color: #EDEDED;}	
-		   	   
-.transport .btn{background-color:#b24354;
+		   background-color: #EDEDED;}
+
+.transport .btn{background-color:#6BCBD9;
 				margin-left: 15px;
 				color: #fff;   }
 
@@ -256,40 +266,42 @@ nav ul li:hover {
 
 .carousel-small .feed{width:50%;
 					  margin: auto;}
-					  
-.carousel-small h4{color:#b24354}
 
-.feedback h4{color:#b24354}	
+.carousel-small h4{color:#6BCBD9}
 
-.carousel-indicators li{background-color:#b24354;
+.feedback h4{color:#6BCBD9}
+
+.carousel-indicators li{background-color:#6BCBD9;
                         height: 5px;}
 
 .carousel-indicators{margin-top: 30px;}
 
-				
+
 /*footer*/
 footer{background-color: #EDEDED;}
 .footer-top{background-color: #EDEDED;
 	padding:15px 0px;}
-	
+
 	.footer-top li{font-size: 12px;
 	margin-left: 10px;
 	padding:5px}
-	
+
 	.footer-top ul{display: flex;
 	justify-content: center;}
-	
+
 	.footer-top a{color:#5A5959;}
-	
+
 	.footer-bottom{background-color: #343A40;
 	padding:15px 0px}
-	
+
 	.footer-bottom a{color:#fff}
-	.footer-bottom i:hover{color: #b24354}
-	
+	.footer-bottom i:hover{color: #6BCBD9}
+
 	.footer-links{width: 25%;
 	margin: auto;
 	display: flex;
 	justify-content: space-between;}
+
+	
 
 	

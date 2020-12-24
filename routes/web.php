@@ -37,6 +37,7 @@ Route::group(['prefix' => '{language?}'], function () {
             Route::resource('admins', 'AdminController');
             Route::resource('settings', 'SettingsController');
             Route::resource('contents', 'ContentController');
+            Route::resource('pricing', 'PricingController');
         });
     });
 });
