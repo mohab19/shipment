@@ -74,6 +74,11 @@
                                     <label for="note_en" class="col-form-label">@lang('pricing.note_en')</label>
                                     <textarea type="text" name="note_en" class="form-control"></textarea>
                                 </div>
+                                <hr>
+                                <div class="form-group">
+                                    <label for="local" class="col-form-label">@lang('pricing.local')</label>
+                                    <input type="number" name="local" class="form-control">
+                                </div>
 
                                 <div class="col-sm-12 text-center pl-0 mt-3" style="float: right;">
                                     <button type="submit" class="btn btn-space btn-primary col-sm-4">@lang('main.save')</button>

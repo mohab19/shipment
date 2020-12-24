@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\PricingRequest;
 use Illuminate\Http\Request;
+use App\PricingCity;
 use App\Pricing;
 
 class PricingController extends Controller
@@ -37,7 +38,13 @@ class PricingController extends Controller
      */
     public function store($lang, PricingRequest $request)
     {
-        $price = Pricing::create($request->all());
+        $price        = Pricing::create($request->all());
+        $pricing_city = PricingCity::create([
+            'city_from' => $price->id,
+            'city_to'   => $price->id,
+            'price'     => $request->local
+        ]);
+
     }
 
     /**
@@ -59,7 +66,9 @@ class PricingController extends Controller
      */
     public function edit($lang, Pricing $pricing)
     {
-        return view("pricing.edit", compact("pricing"));
+        $cities = Pricing::where('id', '!=', $pricing->id)->get();
+        $cities_pricing = PricingCity::where('city_from', $pricing->id)->get();
+        return view("pricing.edit", compact("pricing", "cities", "cities_pricing"));
     }
 
     /**
@@ -83,5 +92,49 @@ class PricingController extends Controller
     public function destroy($lang, Pricing $pricing)
     {
         $pricing->delete();
+    }
+
+    public function add_city(Request $request)
+    {
+        $city_pricing = PricingCity::create([
+            'city_from' => $request->city_from,
+            'city_to'   => $request->city_to,
+            'price'     => $request->price
+        ]);
+
+        $city_from = Pricing::where("id", $city_pricing->city_from)->first();
+        $city_to   = Pricing::where("id", $city_pricing->city_to)->first();
+
+        $data = [
+            'id'        => $city_pricing->id,
+            'city_from' => $city_from["city_".app()->getLocale()],
+            'city_to'   => $city_to["city_".app()->getLocale()],
+            'price'     => $city_pricing->price
+        ];
+
+        return json_encode($data);
+    }
+
+    public function delete_city($lang, $id)
+    {
+        $city_pricing = PricingCity::where("id", $id)->delete();
+        return 200;
+    }
+
+    public function get_quota($lang, Request $request)
+    {
+        $city_from = Pricing::where('id', $request->city_id)->first();
+        $cities_to = PricingCity::where('city_from', $request->city_id)->get();
+        $data      = array();
+        $data["city_from"] = $city_from["city_".app()->getLocale()];
+        $data["note"]      = $city_from["note_".app()->getLocale()];
+        $data["cities_to"] = array();
+
+        foreach ($cities_to as $key => $city) {
+            $data["cities_to"][$key]["city_to"]   = $city->City_to["city_".app()->getLocale()];
+            $data["cities_to"][$key]["pricing"]   = $city->price * $request->no_of_shipment;
+        }
+
+        return json_encode($data);
     }
 }

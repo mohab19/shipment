@@ -25,6 +25,7 @@ Route::group(['prefix' => '{language?}'], function () {
     Route::get('logout', 'Auth\LoginController@logout')->name('logout');
     Route::get('admin/login', 'Auth\AdminLoginController@showLoginForm')->name('admin-login');
     Route::post('admin/login', 'Auth\AdminLoginController@login')->name('admin-login.submit');
+    Route::post('get_quota', 'PricingController@get_quota');
 
     Route::group(['middleware' => ['auth:admin']], function () {
         /*** home page admin route ***/
@@ -39,6 +40,8 @@ Route::group(['prefix' => '{language?}'], function () {
             Route::resource('settings', 'SettingsController');
             Route::resource('contents', 'ContentController');
             Route::resource('pricing', 'PricingController');
+            Route::post('add_city', 'PricingController@add_city');
+            Route::get('delete_city/{id}', 'PricingController@delete_city');
         });
     });
 });

@@ -35,7 +35,7 @@
             <select name="shipfrom" id="shipfrom" class="control-form mx-2">
                 <option value="0">@lang('home.ship_from')</option>
                 @foreach($pricings as $key => $price)
-                <option value="{{$price->price}}">{{$price["city_".app()->getLocale()]}}</option>
+                <option value="{{$price->id}}">{{$price["city_".app()->getLocale()]}}</option>
                 @endforeach
             </select>
         </div>
@@ -44,24 +44,14 @@
         </div>
         <div class="row">
             <div class="col-md-12">
+                <span id="table_note"></span>
+                <br>
                 <table class="table text-center mt-5" style="">
                     <thead>
-                        <tr>
-                            <th></th>
-                            <th>Cairo</th>
-                            <th>Alex</th>
-                            <th>Suez</th>
-                            <th>Upper Egypt</th>
-                        </tr>
+
                     </thead>
                     <tbody>
-                        <tr>
-                            <td style="font-weight: bold;">Cairo</td>
-                            <td>50 EGP</td>
-                            <td>50 EGP</td>
-                            <td>50 EGP</td>
-                            <td>50 EGP</td>
-                        </tr>
+
                     </tbody>
                 </table>
             </div>
@@ -74,12 +64,39 @@
     $(document).ready(function() {
         $('#get_quota').on('click', function(e) {
             e.preventDefault();
+            var token          = '{{ csrf_token() }}'
             var city           = $('#shipfrom').val();
             var no_of_shipment = $('#no_of_shipment').val();
+
             if(city == 0 || no_of_shipment == "") {
                 alert("please inter the missing inputs!");
             } else {
-                $('table').toggle();
+                $.ajax({
+                    type: 'post',
+                    url : '{{url(app()->getLocale()."/get_quota")}}',
+                    data: {
+                        _token : token,
+                        city_id: city,
+                        no_of_shipment : no_of_shipment
+                    },
+                    success: function(response) {
+                        response = JSON.parse(response);
+                        console.log(response);
+                        var th = '<tr><th></th>';
+                        var td = "<tr><td id='city_from'>"+response.city_from+"</td>";
+                        $.each(response.cities_to, function(key, value) {
+                            $()
+                            th += '<th>'+value["city_to"]+'</th>';
+                            td += '<td>'+value["pricing"]+'</td>';
+                        });
+                        th += '</tr>';
+                        td += '</tr>';
+                        $('table thead').html(th);
+                        $('table tbody').html(td);
+                        $('table').show(300);
+                        $('#table_note').html(response.note);
+                    }
+                });
             }
         });
     });
