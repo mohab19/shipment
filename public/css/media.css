@@ -1,7 +1,5 @@
 @media(max-width:767px) /* xs small*/
 {
-    #map{display:none !important}
-
     .features .row{justify-content: center !important;}
 
       .call-us{margin-bottom: 80px;}
@@ -45,8 +43,8 @@
 }
 @media(min-width:768px) and (max-width:991px) /*small*/
 {
-    #map{display:none !important}
-
+ 
+    
     .feat-last{margin: auto;}
     .call-us{margin-bottom: 80px;}
     #carouselExampleIndicators{display: none;}
@@ -86,7 +84,7 @@
 @media(min-width:1001px) and (max-width:1199px) {/*medium*/
 
    .features .col-lg-3{margin: auto;}
-   #map{display:none !important}
+ 
 
 }
 @media(min-width:1200px) /*large*/
