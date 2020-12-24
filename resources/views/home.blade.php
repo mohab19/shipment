@@ -2,7 +2,7 @@
 @push('styles')
 <link rel="stylesheet" href="{{ asset('css/index_style.css') }}">
 <style>
-#map2{display:none}	
+#map2{display:none}
 @media(max-width:767px) /* xs small*/
 {
 	#map{display:none !important}
@@ -19,7 +19,7 @@
 }
 @media(min-width:1200px) /*large*/
 {
-    
+
 }
 </style>
 @endpush
@@ -40,7 +40,7 @@
 <!-- start features -->
 <section class="features">
 	<div class="container text-center">
-		<h2 class="header">WHY CHOOSE Deliver <span>Me</span></h2>
+		<h2 class="header">@lang('home.why_choose') <span>@lang('home.me')</span></h2>
 		<div class="row justify-content-between">
 			@foreach($features as $key => $feature)
 			<div class="feature col-lg-3 ">
@@ -91,7 +91,7 @@
 <!-- start parteners -->
 <section class="partners">
 	<div class="container">
-		<h2 class="pb-5 text-center">Our Partners</h2>
+		<h2 class="pb-5 text-center">@lang('home.our_parteners')</h2>
 		<div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
 			<div class="carousel-inner">
 				@php $counter = 0; @endphp
@@ -133,80 +133,80 @@
 	<div class="panel-background">
 	</div>
 	<div class="container text-center">
-		<h2>HOW MUCH OUR COMPANY COVERS</h2>
+		<h2>@lang('home.how_much')</h2>
 		<div class="row">
-	    	@if(app()->getLocale() == 'en') 
+	    	@if(app()->getLocale() == 'en')
 			<div class="col-md-7 col-sm-12"    id="map">
-			<b class="dot dot1" data-toggle="tooltip" data-html="true" title="Alexandria"  style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 14%; left: 20%;"></b>	
-			<b class="dot dot2" data-toggle="tooltip" data-html="true" title="damietta" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%; display:inline-block;position: relative;top: 11%;left: 30%;"></b>	
+			<b class="dot dot1" data-toggle="tooltip" data-html="true" title="Alexandria"  style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 14%; left: 20%;"></b>
+			<b class="dot dot2" data-toggle="tooltip" data-html="true" title="damietta" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%; display:inline-block;position: relative;top: 11%;left: 30%;"></b>
 			<b class="dot dot3" data-toggle="tooltip" data-html="true" title="port said" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%; display:inline-block;position: relative;top: 14%;left: 33%;"></b>
 			<b class="dot dot4" data-toggle="tooltip" data-html="true" title="El Behira" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative; top:17%;left: 16%;"></b>
 			<b class="dot dot5" data-toggle="tooltip" data-html="true" title="Kafr el zayat" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position:relative;top: 20%;left: 16%;"></b>
 			<b class="dot dot6" data-toggle="tooltip" data-html="true" title="Kafr El shiekh" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 16%;left: 15%"></b>
 			<b class="dot dot7" data-toggle="tooltip" data-html="true" title="Tanta" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 20%;left: 14%"></b>
-			<b class="dot dot8" data-toggle="tooltip" data-html="true" title="Giza" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 28%;left: 13%;"></b>	
-			<b class="dot dot9"  style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position:relative;top: 16%;left: 12%;"></b>	
+			<b class="dot dot8" data-toggle="tooltip" data-html="true" title="Giza" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 28%;left: 13%;"></b>
+			<b class="dot dot9"  style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position:relative;top: 16%;left: 12%;"></b>
 			<b class="dot dot10" data-toggle="tooltip" data-html="true" title="Mansoura" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position:relative;top: 19%; left: 9%;"></b>
 			<b class="dot dot11" data-toggle="tooltip" data-html="true" title="Elmahla" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position:relative;top: 19%;left: 10%;"></b>
 			<b class="dot dot12" data-toggle="tooltip" data-html="true" title="Menoufia" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative; top: 22%;left: 1.5%;"></b>
 			<b class="dot dot13" data-toggle="tooltip" data-html="true" title="Banha" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 23%;left: 2%;"></b>
-			<b class="dot dot14" data-toggle="tooltip" data-html="true" title="Fayoum" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 35.5%;left: -3%;"></b>	
-			<b class="dot dot15" data-toggle="tooltip" data-html="true" title="sharqia" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative; top: 23%;left: 3%;"></b>	
+			<b class="dot dot14" data-toggle="tooltip" data-html="true" title="Fayoum" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 35.5%;left: -3%;"></b>
+			<b class="dot dot15" data-toggle="tooltip" data-html="true" title="sharqia" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative; top: 23%;left: 3%;"></b>
 			<b class="dot dot16" data-toggle="tooltip" data-html="true" title="Ismailia" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative; top: 20%;left: 5%;"></b>
 			<b class="dot dot17" data-toggle="tooltip" data-html="true" title="suez" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative; top: 25%;left: 4%;"></b>
 			<b class="dot dot18" data-toggle="tooltip" data-html="true" title="Qaluibia" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 25%;left: -9%;"></b>
 			<b class="dot dot19" data-toggle="tooltip" data-html="true" title="Cairo" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 28%; left: -12.5%;"></b>
-			<b class="dot dot20" data-toggle="tooltip" data-html="true" title="Aswan" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 67.5%;left: -2%"></b>	
-			<b class="dot dot21" data-toggle="tooltip" data-html="true" title="Hurghada" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 43%; left: 3%;"></b>	
+			<b class="dot dot20" data-toggle="tooltip" data-html="true" title="Aswan" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 67.5%;left: -2%"></b>
+			<b class="dot dot21" data-toggle="tooltip" data-html="true" title="Hurghada" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 43%; left: 3%;"></b>
 			<b class="dot dot22" data-toggle="tooltip" data-html="true" title="Beni seuf" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 37%;left: -16%;"></b>
 			<b class="dot dot23" data-toggle="tooltip" data-html="true" title="Menyia" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 42.5%;left: -19%;"></b>
 			<b class="dot dot24" data-toggle="tooltip" data-html="true" title="Asut" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 47.5%;left: -19%;"></b>
 			<b class="dot dot25" data-toggle="tooltip" data-html="true" title="Sohag" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 53%;left: -18%;"></b>
 			<b class="dot dot26" data-toggle="tooltip" data-html="true" title="Quna" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 57%;left: -15%;"></b>
 			<b class="dot dot27" data-toggle="tooltip" data-html="true" title="Luxor" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative; top: 63%;left: -17%;"></b>
-	
+
 			<img src="{{asset('images/Bosta-map-1-1.svg')}}" class="img-fluid my-5" style="height: 350px;" alt="">
 			</div>
 			@else
 
 			<div class="col-md-7 col-sm-12" id="map">
-			<b class="dot dot1" data-toggle="tooltip" data-html="true" title="Alexandria"  style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 16%; right: 36%;"></b>	
-			<b class="dot dot2" data-toggle="tooltip" data-html="true" title="damietta" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%; display:inline-block;position: relative; top: 13%; right: 21%;"></b>	
+			<b class="dot dot1" data-toggle="tooltip" data-html="true" title="Alexandria"  style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 16%; right: 36%;"></b>
+			<b class="dot dot2" data-toggle="tooltip" data-html="true" title="damietta" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%; display:inline-block;position: relative; top: 13%; right: 21%;"></b>
 			<b class="dot dot3" data-toggle="tooltip" data-html="true" title="port said" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%; display:inline-block;position: relative;top:17%;right: 14%;"></b>
 			<b class="dot dot4" data-toggle="tooltip" data-html="true" title="El Behira" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 20%;right: 27%; "></b>
 			<b class="dot dot5" data-toggle="tooltip" data-html="true" title="Kafr el zayat" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position:relative;top: 23%; right: 22%;"></b>
 			<b class="dot dot6" data-toggle="tooltip" data-html="true" title="Menoufia" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 25.5%;right: 20%;"></b>
 			<b class="dot dot7" data-toggle="tooltip" data-html="true" title="Tanta" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 23%; right: 15.5%;"></b>
-			<b class="dot dot8" data-toggle="tooltip" data-html="true" title="Giza" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 31%;right: 12%;"></b>	
-			<b class="dot dot9" data-toggle="tooltip" data-html="true" title="Elmahla" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position:relative;right: 8%;top:21%"></b>	
+			<b class="dot dot8" data-toggle="tooltip" data-html="true" title="Giza" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 31%;right: 12%;"></b>
+			<b class="dot dot9" data-toggle="tooltip" data-html="true" title="Elmahla" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position:relative;right: 8%;top:21%"></b>
 			<b class="dot dot10" data-toggle="tooltip" data-html="true" title="" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position:relative;top: 18%; right: 7%;"></b>
 			<b class="dot dot11" data-toggle="tooltip" data-html="true" title="Beni seuf"style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position:relative;right:6%;top:41.5%"></b>
 			<b class="dot dot12" data-toggle="tooltip" data-html="true" title="Kafr rl shiekh" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 18%;right:6%"></b>
 			<b class="dot dot13" data-toggle="tooltip" data-html="true" title="Banha" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 26%;right: 3%;"></b>
-			<b class="dot dot14" data-toggle="tooltip" data-html="true" title="Fayoum" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 40%;right:3%"></b>	
-			<b class="dot dot15" data-toggle="tooltip" data-html="true" title="sharqia" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative; top: 26%;left: 8%;"></b>	
+			<b class="dot dot14" data-toggle="tooltip" data-html="true" title="Fayoum" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 40%;right:3%"></b>
+			<b class="dot dot15" data-toggle="tooltip" data-html="true" title="sharqia" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative; top: 26%;left: 8%;"></b>
 			<b class="dot dot16" data-toggle="tooltip" data-html="true" title="Ismailia" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative; top: 23%;left:14%"></b>
 			<b class="dot dot17" data-toggle="tooltip" data-html="true" title="suez" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 28%; left: 17%;"></b>
 			<b class="dot dot18" data-toggle="tooltip" data-html="true" title="Qaluibia" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;left:8%;top:28%"></b>
 			<b class="dot dot19" data-toggle="tooltip" data-html="true" title="Cairo" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top:31%;left:9%"></b>
-			<b class="dot dot20" data-toggle="tooltip" data-html="true" title="Aswan" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 77%;left: 23%"></b>	
-			<b class="dot dot21" data-toggle="tooltip" data-html="true" title="Hurghada" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 48%;left: 33%;"></b>	
+			<b class="dot dot20" data-toggle="tooltip" data-html="true" title="Aswan" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 77%;left: 23%"></b>
+			<b class="dot dot21" data-toggle="tooltip" data-html="true" title="Hurghada" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 48%;left: 33%;"></b>
 			<b class="dot dot22" data-toggle="tooltip" data-html="true" title="Mansoura" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;left: 18%;top:22%"></b>
 			<b class="dot dot23" data-toggle="tooltip" data-html="true" title="Menyia" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 47.5%;;left:20%"></b>
 			<b class="dot dot24" data-toggle="tooltip" data-html="true" title="Asut" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 53%;left: 23%;"></b>
 			<b class="dot dot25" data-toggle="tooltip" data-html="true" title="Sohag" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 60%;left:29%"></b>
 			<b class="dot dot26" data-toggle="tooltip" data-html="true" title="Quna" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 65%; left: 36%;"></b>
 			<b class="dot dot27" data-toggle="tooltip" data-html="true" title="Luxor" style="width:10px;height:10px;background-color: #6BCBD9;border-radius: 50%;display:inline-block;position: relative;top: 71%;left: 38%;"></b>
-	
+
 			<img src="{{asset('images/Bosta-map-1-1.svg')}}" class="img-fluid my-5" style="height: 350px;" alt="">
-			</div> 
+			</div>
 			@endif
 			<div class="col-md-5 col-sm-12">
 				<h4>{{$contents->where('type', 'coverage')->first()["title_".app()->getLocale()]}}</h4>
 				<p>{{$contents->where('type', 'coverage')->first()["content_".app()->getLocale()]}}</p>
 			</div>
 			<div class="col-md-7 col-sm-12" id="map2">
-			<img src="{{asset('images/Bosta-map-1-1.svg')}}" class="img-fluid my-5" style="height: 350px;" alt="">	
+			<img src="{{asset('images/Bosta-map-1-1.svg')}}" class="img-fluid my-5" style="height: 350px;" alt="">
 			</div>
 		</div>
 	</div>
@@ -226,7 +226,7 @@
 			<div class="offset-lg-1 col-lg-6">
 				<div class="right d-flex">
 					<input type="text" class="w-75 p-2">
-					<button class="btn track">Track Now</button>
+					<button class="btn track">@lang('home.track_now')</button>
 				</div>
 			</div>
 		</div>
@@ -238,7 +238,7 @@
 <section class="work">
 	<div class="overlay">
 		<div class="container text-white">
-			<h2 class="text-center">How it work</h2>
+			<h2 class="text-center">@lang('home.how_works')</h2>
 			<div class="row">
 				@foreach($work_hows as $key => $how)
 				<div class="col-lg-4">
@@ -258,7 +258,7 @@
 <!-- start feedback -->
 <section class="feedback">
   	<div class="container">
-	  	<h2 class="text-center py-3">Happy Clients</h2>
+	  	<h2 class="text-center py-3">@lang('home.happy_clients')</h2>
 	  	<div id="client-carousel" class="carousel slide" data-bs-ride="carousel">
 			<div class="carousel-inner">
 				@php $counter = 0; @endphp
@@ -294,8 +294,7 @@
 	  		</ol>
 		</div>
 	  </div>
-	  
+
 </section>
 <!-- end feedback -->
 @endsection
-

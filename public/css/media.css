@@ -19,7 +19,7 @@
                  margin-top: 20px;}
 
      .navbar{background-color: #b24354 !important;}
-     
+
      nav .collapse{width:100%}
 
      h3.header span{color:#343A40 !important}
@@ -34,7 +34,7 @@
     .pricing .col-lg-4{width:70% !important;
         margin: auto;}
 
-.price{margin-top: 20px;} 
+.price{margin-top: 20px;}
 
 
 .navbar-brand .img-fluid {
@@ -46,7 +46,7 @@
 @media(min-width:768px) and (max-width:991px) /*small*/
 {
     #map{display:none !important}
-    
+
     .feat-last{margin: auto;}
     .call-us{margin-bottom: 80px;}
     #carouselExampleIndicators{display: none;}
@@ -56,7 +56,7 @@
     .footer-bottom{position: static;}
     li.nav-item{text-align: left;
         margin-bottom: 20px;}
-    .navbar{background-color: #b24354 !important;}  
+    .navbar{background-color: #b24354 !important;}
 
     nav .collapse{width: 100%;}
 
@@ -73,25 +73,23 @@
     .pricing .col-lg-4{width:60% !important;
                        margin: auto;}
 
-    .price{margin-top: 20px;} 
-    
+    .price{margin-top: 20px;}
+
     .features .col-lg-3{margin: auto;}
 
     .navbar-brand .img-fluid {
         max-width: 40% !important;
         height: 86px !important;
     }
-  
+
 }
 @media(min-width:1001px) and (max-width:1199px) {/*medium*/
- 
+
    .features .col-lg-3{margin: auto;}
    #map{display:none !important}
-   
+
 }
 @media(min-width:1200px) /*large*/
 {
-    
+
 }
-
-

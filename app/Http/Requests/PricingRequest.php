@@ -27,6 +27,7 @@ class PricingRequest extends FormRequest
             'city_ar'    => 'required|string|max:50',
             'city_en'    => 'required|string|max:50',
             'price'      => 'required|numeric|min:1',
+            'local'      => 'required|numeric|min:1',
             'note_ar'    => 'nullable|string',
             'note_en'    => 'nullable|string',
         ];

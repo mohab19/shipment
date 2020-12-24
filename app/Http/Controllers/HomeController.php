@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
+use App\Mail\ContactUs;
 use App\Pricing;
+use App\Settings;
 
 class HomeController extends Controller
 {
@@ -36,6 +39,12 @@ class HomeController extends Controller
     public function contact_us()
     {
         return view('contact_us');
+    }
+
+    public function send_message(Request $request)
+    {
+        $email = Settings::where('name', 'email')->first()->value;
+        Mail::to($email)->send(new ContactUs($request));
     }
 
 }

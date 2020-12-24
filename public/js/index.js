@@ -3,7 +3,7 @@ $(document).ready(function() {
 	$('html,body').animate({
 		scrollTop: $(".features").offset().top}, 'slow');
 	});
-	
+
 });
 
 // $('b[data-toggle="tooltip"]').tooltip();
@@ -18,7 +18,7 @@ console.log(topsec)
 $(window).scroll(function(){
 	if($(window).scrollTop() > topsec)
 	{
-	
+
 	$(".navbar").css("background-color", " #b24354");
 	$("nav a ").hover(function(){	$(this).css("color","#fff")})
 	$(".navbar-brand span").css("color","#343A40");
@@ -30,3 +30,6 @@ $(window).scroll(function(){
 	$(".navbar-brand span").css("color","#b24354");
     }
 });
+
+
+console.log("helo")
