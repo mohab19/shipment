@@ -63,7 +63,7 @@
 			</div>
 			<div class="offset-lg-1 col-lg-4  col-md-8 mt-5">
 				<div class="about-img">
-					<img src="images/img_1.jpg"  class="img-fluid"  alt="shipping">
+					<img src="{{url('/images/contents').'/'.$contents->where('type', 'about_us_pic')->first()['image']}}" width="350" height="400" class="img-fluid"  alt="shipping">
 				</div>
 			</div>
 		</div>
@@ -118,17 +118,17 @@
 	<div class="container text-center">
 		<h2 class="py-5">@lang('home.how_much')</h2>
 		<div class="row">
-		  
+
 		   <div class="col-lg-7 col-md-12 ">
 		   <div id="map" class="m-auto"></div>
 		   </div>
-			
+
 			<div class="col-lg-5 col-md-12">
 				<h4>{{$contents->where('type', 'coverage')->first()["title_".app()->getLocale()]}}</h4>
 				<p>{{$contents->where('type', 'coverage')->first()["content_".app()->getLocale()]}}</p>
 			</div>
-			
-		
+
+
 
 		</div>
 	</div>
