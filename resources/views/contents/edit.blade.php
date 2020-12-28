@@ -69,7 +69,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="content_en" class="col-form-label">@lang('contents.content_en')</label>
-                                    <textarea type="text" name="content_en" class="form-control">{{$content->content_ar}}</textarea>
+                                    <textarea type="text" name="content_en" class="form-control">{{$content->content_en}}</textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="type" class="col-form-label">@lang('settings.type')</label>

@@ -47,8 +47,8 @@ class ContentController extends Controller
         $content = Content::create([
             'title_ar'   => $request->title_ar,
             'title_en'   => $request->title_en,
-            'content_ar' => ($request->content_ar) != null ? $request->content_ar : "",
-            'content_en' => ($request->content_en) != null ? $request->content_en : "",
+            'content_ar' => $request->content_ar,
+            'content_en' => $request->content_en,
             'type'       => $request->type,
             'value'      => $request->value,
             'image'      => $imageName,
@@ -96,8 +96,8 @@ class ContentController extends Controller
         $content->update([
             'title_ar'   => $request->title_ar,
             'title_en'   => $request->title_en,
-            'content_ar' => ($request->content_ar) != null ? $request->content_ar : "",
-            'content_en' => ($request->content_en) != null ? $request->content_en : "",
+            'content_ar' => $request->content_ar,
+            'content_en' => $request->content_en,
             'type'       => $request->type,
             'value'      => $request->value,
             'image'      => $imageName,
