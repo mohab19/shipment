@@ -37,8 +37,6 @@
     <script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/plugin.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/index.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/mapdata.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/countrymap.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/intelligent.js')}}"></script>
     @stack('scripts')
 </body>
