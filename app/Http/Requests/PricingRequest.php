@@ -24,12 +24,13 @@ class PricingRequest extends FormRequest
     public function rules()
     {
         return [
-            'city_ar'    => 'required|string|max:50',
-            'city_en'    => 'required|string|max:50',
-            'price'      => 'required|numeric|min:1',
-            'local'      => 'required|numeric|min:1',
-            'note_ar'    => 'nullable|string',
-            'note_en'    => 'nullable|string',
+            'city_ar'       => 'required|string|max:50',
+            'city_en'       => 'required|string|max:50',
+            'price'         => 'required|numeric|min:1',
+            'packages_from' => 'required|numeric|min:1',
+            'packages_to'   => 'required|numeric|min:1',
+            'note_ar'       => 'nullable|string',
+            'note_en'       => 'nullable|string',
         ];
     }
 }

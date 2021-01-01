@@ -78,7 +78,7 @@
                                 </div>
                                 @if(count($cities) > 0)
                                 <hr>
-                                <form class="mt-3 text-center">
+                                <div class="mt-3 text-center">
                                     @csrf
                                     <div class="form-group">
                                         <select class="form-control" name="city_to">
@@ -88,10 +88,16 @@
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" name="city_price" class="form-control">
+                                        <input type="number" name="packages_from" class="form-control" placeholder="@lang('pricing.packages_from')">
                                     </div>
-                                    <span id="city_pricing" class="btn btn-primary offset-md-4 col-sm-4"><i class="fas fa-plus"></i> @lang('pricing.add_pricing')</span>
-                                </form>
+                                    <div class="form-group">
+                                        <input type="number" name="packages_to" class="form-control" placeholder="@lang('pricing.packages_to')">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="number" name="city_price" class="form-control" placeholder="@lang('pricing.price')">
+                                    </div>
+                                    <span id="city_pricing" class="btn btn-primary col-sm-4"><i class="fas fa-plus"></i> @lang('pricing.add_pricing')</span>
+                                </div>
                                 @endif
 
                                 <div class="col-sm-12 text-center pl-0 mt-3" style="float: right;">
@@ -111,6 +117,8 @@
                                             <th>@lang('pricing.id')</th>
                                             <th>@lang('pricing.city_from')</th>
                                             <th>@lang('pricing.city_to')</th>
+                                            <th>@lang('pricing.packages_from')</th>
+                                            <th>@lang('pricing.packages_to')</th>
                                             <th>@lang('pricing.price')</th>
                                             <th>@lang('pricing.action')</th>
                                         </tr>
@@ -121,6 +129,9 @@
                                             <td>{{$CPricing->id}}</td>
                                             <td>{{$CPricing->City_from["city_".app()->getLocale()]}}</td>
                                             <td>{{$CPricing->City_to["city_".app()->getLocale()]}}</td>
+                                            <th>@lang('pricing.packages_from')</th>
+                                            <td>{{$CPricing->packages_from}}</td>
+                                            <td>{{$CPricing->packages_to}}</td>
                                             <td>{{$CPricing->price}}</td>
                                             <td><span class="delete_price btn btn-danger" data-id="{{$CPricing->id}}" style="padding: 5px 10px;"><i class="fas fa-trash"></i></span></td>
                                         </tr>
@@ -131,6 +142,8 @@
                                             <th>@lang('pricing.id')</th>
                                             <th>@lang('pricing.city_from')</th>
                                             <th>@lang('pricing.city_to')</th>
+                                            <th>@lang('pricing.packages_from')</th>
+                                            <th>@lang('pricing.packages_to')</th>
                                             <th>@lang('pricing.price')</th>
                                             <th>@lang('pricing.action')</th>
                                         </tr>
@@ -151,22 +164,27 @@
 @section('JavaScript')
 <script type="text/javascript">
     $(document).ready(function() {
+
         $("#city_pricing").on('click', function() {
-            token     = $('input[name="_token"]').val();
-            city_to   = $('select[name="city_to"]').val();
-            city_from = $('input[name="city_from"]').val();
-            price     = $('input[name="city_price"]').val();
-            if(city_to == "" || price == "") {
+            token         = $('input[name="_token"]').val();
+            city_to       = $('select[name="city_to"]').val();
+            city_from     = $('input[name="city_from"]').val();
+            packages_from = $('input[name="packages_from"]').val();
+            packages_to   = $('input[name="packages_to"]').val();
+            price         = $('input[name="city_price"]').val();
+            if(city_to == "" || price == "" || packages_from == "" || packages_to == "") {
                 alert("Please fill the missing inputs!");
             } else {
                 $.ajax({
                     type: 'post',
                     url : '{{url(app()->getLocale()."/admin/add_city")}}',
                     data: {
-                        _token : token,
-                        city_from : city_from,
-                        city_to : city_to,
-                        price: price
+                        _token       : token,
+                        city_from    : city_from,
+                        city_to      : city_to,
+                        packages_from: packages_from,
+                        packages_to  : packages_to,
+                        price        : price
                     },
                     success: function(response) {
                         response = JSON.parse(response);
@@ -175,9 +193,12 @@
                         html += '<td>'+response.id+'</td>';
                         html += '<td>'+response.city_from+'</td>';
                         html += '<td>'+response.city_to+'</td>';
+                        html += '<td>'+response.packages_from+'</td>';
+                        html += '<td>'+response.packages_to+'</td>';
                         html += '<td>'+response.price+'</td>';
                         html += '<td><span class="delete_price btn btn-danger" data-id="'+response.id+'" style="padding: 5px 10px;"><i class="fas fa-trash"></i></span></td>';
                         html += '</tr>';
+                        $('tr.odd').remove();
                         $('#table tbody').append(html);
                         $('.delete_price').on('click', function() {
                             var here = $(this);

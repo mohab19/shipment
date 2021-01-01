@@ -9,7 +9,7 @@ class PricingCity extends Model
 {
 	use SoftDeletes;
 
-    protected $fillable = ['city_from', 'city_to', 'price'];
+    protected $fillable = ['city_from', 'city_to', 'packages_from', 'packages_to', 'price'];
 
 	public function City_to()
     {
@@ -20,4 +20,5 @@ class PricingCity extends Model
     {
         return $this->belongsTo('App\Pricing', 'city_from', 'id');
     }
+	
 }

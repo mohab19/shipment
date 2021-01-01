@@ -27,7 +27,6 @@
         <link rel="stylesheet" href="{{URL('assets/vendor/fonts/flag-icon-css/flag-icon.min.css')}}">
         <link rel="stylesheet" href="{{URL('assets/libs/css/custom.css')}}">
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="stylesheet" type="text/css" href="{{asset('css/image-uploader.min.css')}}">
         <link rel="stylesheet" type="text/css" href="{{URL('assets/vendor/datatables/css/dataTables.bootstrap4.css')}}">
         <link rel="stylesheet" type="text/css" href="{{URL('assets/vendor/datatables/css/buttons.bootstrap4.css')}}">
         <link rel="stylesheet" type="text/css" href="{{URL('assets/vendor/datatables/css/select.bootstrap4.css')}}">
@@ -100,7 +99,6 @@
         <script src="{{URL('assets/vendor/charts/c3charts/c3.min.js')}}"></script>
         <script src="{{URL('assets/vendor/charts/c3charts/d3-5.4.0.min.js')}}"></script>
         <script src="{{URL('assets/vendor/charts/c3charts/C3chartjs.js')}}"></script>
-        <script src="{{asset('js/image-uploader.min.js')}}" type="text/javascript"></script>
 
         <script src="{{URL('assets/vendor/multi-select/js/jquery.multi-select.js')}}"></script>
         <script src="{{URL('assets/cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js')}}"></script>
